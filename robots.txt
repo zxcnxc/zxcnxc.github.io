@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow: /tags/
+Sitemap: https://zxcnxc.github.io/sitemap.xml

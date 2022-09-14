@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WSL on /zxc/</title>
+    <link>https://zxcnxc.github.io/blog/wsl/</link>
+    <description>Recent content in WSL on /zxc/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2022, All.</copyright>
+    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://zxcnxc.github.io/blog/wsl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>eNSP VS WSL 2</title>
+      <link>https://zxcnxc.github.io/ensp-vs-wsl-2/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zxcnxc.github.io/ensp-vs-wsl-2/</guid>
+      <description>Table Of Contents TLDR Issues Setup Troubleshoot Summary TLDR Conflicts between Hypervisor.
+Issues I wanted to learn more about Huawei devices, so i chose the Huawei Enterprise Network Simulator Platform eNSP to simulate an enterprise network. So I followed the tutorial from a blog on the internet, but when I tried to run the program, I got the error message &amp;ldquo;Failed to start device AR1 error code 40.&amp;rdquo; in eNSP.</description>
+    </item>
+    
+  </channel>
+</rss>
