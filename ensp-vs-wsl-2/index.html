@@ -266,8 +266,8 @@
 <h2 id="tldr">TLDR</h2>
 <p>Conflicts between Hypervisor.</p>
 <h2 id="issues">Issues</h2>
-<p>I wanted to learn more about Huawei devices, so i chose the Huawei Enterprise Network Simulator Platform <a href="https://support.huawei.com/enterprise/en/data-communication/ensp-pid-9017384?category=installation-upgrade">eNSP</a> to simulate an enterprise network. <br></p>
-<p>So I followed the tutorial from a blog on the internet, but when I tried to run the program, I got the error message &ldquo;Failed to start device AR1 error code 40.&rdquo; in eNSP.
+<p>I wanted to learn more about Huawei devices, so i chose the Huawei Enterprise Network Simulator Platform <a href="https://support.huawei.com/enterprise/en/data-communication/ensp-pid-9017384?category=installation-upgrade">eNSP</a> to simulate an enterprise network. <br>
+So I followed the tutorial from a blog on the internet, but when I tried to run the program, I got the error message &ldquo;Failed to start device AR1 error code 40.&rdquo; in eNSP.
 <br></p>
 <p><img src="/images/HYPERVSWSL/huawei.png" alt="Error40"></p>
 <p>Then I searched for the error code message and found that WSL is incompatible with Virtualbox because WSL uses Virtual Platform and eNSP requires VirtualBox to run the simulation. <a href="https://superuser.com/questions/1208850/why-cant-virtualbox-or-vmware-run-with-hyper-v-enabled-on-windows-10">1</a> <br></p>
@@ -275,29 +275,37 @@
 <p>Unfortunately, until now, there has been no update from Huawei for eNSP. So if we try to install the latest VirtualBox and then run eNSP, an error message &ldquo;VirtualBox version is not supported&rdquo; will appear.</p>
 <p><img src="/images/HYPERVSWSL/errorhuawei.png" alt="ErrorNotSupport"></p>
 <h2 id="setup">Setup</h2>
-<pre tabindex="0"><code>OS Version : Windows 10 Pro 64bit Build 19044
-Virtuabox Version : 5.2.44 r139111 (Qt5.6.2) 
-WSL Version : 2
-</code></pre><h2 id="troubleshoot">Troubleshoot</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>OS Version : Windows 10 Pro 64bit Build 19044
+</span></span><span style="display:flex;"><span>Virtuabox Version : 5.2.44 r139111 (Qt5.6.2) 
+</span></span><span style="display:flex;"><span>WSL Version : 2
+</span></span></code></pre></div><h2 id="troubleshoot">Troubleshoot</h2>
 <p>In my case, I only need to disable Virtual Machine Platform</p>
 <p>Therefore, the temporary solution is to disable Virtual Machine Platform / Hyper-V using 2 methods.</p>
 <ol>
 <li>
 <p>Using Powershell <br>
 To disable Hyper-V by using Windows PowerShell, follow these steps:</p>
-<p>Open an elevated PowerShell window.</p>
-<p>Run the following command:</p>
+<ul>
+<li>Open an elevated PowerShell window.</li>
+<li>Run the following command:</li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
-</span></span></code></pre></div><p>Reboot</p>
+</span></span></code></pre></div><ul>
+<li>Reboot</li>
+</ul>
 </li>
 <li>
 <p>Using Windows Features
 To disable Virtual Machine Platform in Control Panel, follow these steps:</p>
-<p>In Control Panel, select Programs and Features.</p>
-<p>Select Turn Windows features on or off.</p>
-<p>Clear the Virtual Machine Platform check box.</p>
+<ul>
+<li>In Control Panel, select Programs and Features.</li>
+<li>Select Turn Windows features on or off.</li>
+<li>Clear the Virtual Machine Platform check box.</li>
+</ul>
 <p><img src="/images/HYPERVSWSL/hyper.PNG" alt="hyperv"></p>
-<p>Reboot</p>
+<ul>
+<li>Reboot</li>
+</ul>
 </li>
 </ol>
 <h2 id="summary">Summary</h2>
