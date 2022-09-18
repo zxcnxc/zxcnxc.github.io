@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="MTSHnqO7ph6E8W9gDl-H1tXE2ZrelQHw5VVqxp6EbLs" />
+  <meta name="yandex-verification" content="449202b691de358e" />
+  
+<link rel="shortcut icon" href="https://vanillabakar.github.io/images/favicon-32x32.png" />
+<title>NTP | /zxc/</title>
+<meta name="title" content="NTP" />
+<meta name="description" content="" />
+<meta name="keywords" content="asa-firewall,cisco,dhcp,ensp,gre-over-ipsec,huawei,intervlan,ipsec,itnsa,lwap,nat,ntp,ospf,packet-tracer,radius,rbac,troubleshooting,wlc,wsl," />
+
+
+<meta property="og:title" content="NTP" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vanillabakar.github.io/blog/ntp/" /><meta property="og:image" content="https://vanillabakar.github.io/images/home.png"/><meta property="og:site_name" content="/awan/" />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vanillabakar.github.io/images/home.png"/>
+
+<meta name="twitter:title" content="NTP"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta itemprop="name" content="NTP">
+<meta itemprop="description" content="">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <link rel="alternate" type="application/rss+xml" href="https://vanillabakar.github.io/blog/ntp/index.xml" title="/zxc/" />
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #333;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #ddd;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #eee;
+  }
+
+  a {
+    color: #8cc2dd;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    text-align: left;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+     
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #777;
+  }
+
+  pre code {
+    color: #ddd;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #ccc;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-left: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+  }
+
+   ul.blog-posts li {
+    text-align: start;
+    list-style-type: none;
+  } 
+
+  ul.blog-posts li span {
+    display:flex;
+    flex-flow: row wrap;
+    flex: 1 100%;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+
+    time {
+      text-align: justify;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2 style="text-align:center;">/zxc/</h2>
+</a>
+<nav style="text-align:center;"><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+
+<a href="/about">About</a>
+</nav>
+</header>
+  <main>
+<content>
+  
+  <h3 style="margin-bottom:0">Filtering for "NTP"</h3>
+  <small>
+    <a href="/blog">Remove filter</a>
+  </small>
+  
+  <ul class="blog-posts">
+    
+    <li>
+      <span>
+          <time datetime='2022-09-09' pubdate>
+            09 Sep, 2022
+          </time>
+      </span>
+      <a href="https://vanillabakar.github.io/writeup-itnsa-2021-cisco-troubleshoot-pkt/"><i>Writeup ITNSA 2021 - Packet Tracer Troubleshooting</i></a>
+    </li>
+    
+    <li>
+      <span>
+          <time datetime='2022-03-15' pubdate>
+            15 Mar, 2022
+          </time>
+      </span>
+      <a href="https://vanillabakar.github.io/writeup-itnsa-2021-cisco-pkt/"><i>Writeup ITNSA 2021 - Network Actual &amp; Future Network</i></a>
+    </li>
+    
+  </ul>
+  
+  
+</content>
+
+  </main>
+  <footer>Made with a "small" customized and some love from <a href="https://github.com/janraasch/hugo-bearblog/"> Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

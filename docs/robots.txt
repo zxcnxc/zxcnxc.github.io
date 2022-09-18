@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow: /tags/
+Sitemap: https://vanillabakar.github.io/sitemap.xml

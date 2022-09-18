@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="MTSHnqO7ph6E8W9gDl-H1tXE2ZrelQHw5VVqxp6EbLs" />
+  <meta name="yandex-verification" content="449202b691de358e" />
+  
+<link rel="shortcut icon" href="https://vanillabakar.github.io/images/favicon-32x32.png" />
+<title>eNSP VS WSL 2 | /zxc/</title>
+<meta name="title" content="eNSP VS WSL 2" />
+<meta name="description" content="When you want to try Huawei while doing something in WSL" />
+<meta name="keywords" content="eNSP,WSL,Huawei,Troubleshooting," />
+
+
+<meta property="og:title" content="eNSP VS WSL 2" />
+<meta property="og:description" content="When you want to try Huawei while doing something in WSL" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vanillabakar.github.io/ensp-wsl/" /><meta property="og:image" content="https://vanillabakar.github.io/images/home.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-12-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-13T00:00:00+00:00" /><meta property="og:site_name" content="/awan/" />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vanillabakar.github.io/images/home.png"/>
+
+<meta name="twitter:title" content="eNSP VS WSL 2"/>
+<meta name="twitter:description" content="When you want to try Huawei while doing something in WSL"/>
+
+
+
+<meta itemprop="name" content="eNSP VS WSL 2">
+<meta itemprop="description" content="When you want to try Huawei while doing something in WSL"><meta itemprop="datePublished" content="2021-12-13T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-12-13T00:00:00+00:00" />
+<meta itemprop="wordCount" content="286"><meta itemprop="image" content="https://vanillabakar.github.io/images/home.png"/>
+<meta itemprop="keywords" content="eNSP,WSL,Huawei,Troubleshooting," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #333;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #ddd;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #eee;
+  }
+
+  a {
+    color: #8cc2dd;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    text-align: left;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+     
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #777;
+  }
+
+  pre code {
+    color: #ddd;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #ccc;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-left: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+  }
+
+   ul.blog-posts li {
+    text-align: start;
+    list-style-type: none;
+  } 
+
+  ul.blog-posts li span {
+    display:flex;
+    flex-flow: row wrap;
+    flex: 1 100%;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+
+    time {
+      text-align: justify;
+    }
+  }
+
+</style>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2 style="text-align:center;">/zxc/</h2>
+</a>
+<nav style="text-align:center;"><a href="/">Home</a>
+
+
+<a href="/blog">Blog</a>
+
+
+<a href="/about">About</a>
+</nav>
+</header>
+  <main>
+
+<h1>eNSP VS WSL 2</h1>
+<p>
+    <time datetime='2021-12-13' pubdate>
+      13 Dec, 2021 
+    </time>    
+</p>Estimated Reading time: 2 minutes
+<content>
+  <hr>
+<div>
+    <h2>Table Of Contents</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#tldr">TLDR</a></li>
+    <li><a href="#issues">Issues</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#troubleshoot">Troubleshoot</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+</div>
+<hr>
+<h2 id="tldr">TLDR</h2>
+<p>Conflicts between Hypervisor.</p>
+<h2 id="issues">Issues</h2>
+<p>I wanted to learn more about Huawei devices, so i chose the Huawei Enterprise Network Simulator Platform <a href="https://support.huawei.com/enterprise/en/data-communication/ensp-pid-9017384?category=installation-upgrade">eNSP</a> to simulate an enterprise network. <br>
+So I followed the tutorial from a blog on the internet, but when I tried to run the program, I got the error message &ldquo;Failed to start device AR1 error code 40.&rdquo; in eNSP.
+<br></p>
+<p><img src="/images/HYPERVSWSL/huawei.png" alt="Error40"></p>
+<p>Then I searched for the error code message and found that WSL is incompatible with Virtualbox because WSL uses Virtual Platform and eNSP requires VirtualBox to run the simulation. <a href="https://superuser.com/questions/1208850/why-cant-virtualbox-or-vmware-run-with-hyper-v-enabled-on-windows-10">1</a> <br></p>
+<p>Why not use the latest version of VirtualBox that supports Hyper-V?<br></p>
+<p>Unfortunately, until now, there has been no update from Huawei for eNSP. So if we try to install the latest VirtualBox and then run eNSP, an error message &ldquo;VirtualBox version is not supported&rdquo; will appear.</p>
+<p><img src="/images/HYPERVSWSL/errorhuawei.png" alt="ErrorNotSupport"></p>
+<h2 id="setup">Setup</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>OS Version : Windows 10 Pro 64bit Build 19044
+</span></span><span style="display:flex;"><span>Virtuabox Version : 5.2.44 r139111 (Qt5.6.2) 
+</span></span><span style="display:flex;"><span>WSL Version : 2
+</span></span></code></pre></div><h2 id="troubleshoot">Troubleshoot</h2>
+<p>In my case, I only need to disable Virtual Machine Platform</p>
+<p>Therefore, the temporary solution is to disable Virtual Machine Platform / Hyper-V using 2 methods.</p>
+<ol>
+<li>
+<p>Using Powershell <br>
+To disable Hyper-V by using Windows PowerShell, follow these steps:</p>
+<ul>
+<li>Open an elevated PowerShell window.</li>
+<li>Run the following command:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor
+</span></span></code></pre></div><ul>
+<li>Reboot</li>
+</ul>
+</li>
+<li>
+<p>Using Windows Features
+To disable Virtual Machine Platform in Control Panel, follow these steps:</p>
+<ul>
+<li>In Control Panel, select Programs and Features.</li>
+<li>Select Turn Windows features on or off.</li>
+<li>Clear the Virtual Machine Platform check box.</li>
+</ul>
+<p><img src="/images/HYPERVSWSL/hyper.PNG" alt="hyperv"></p>
+<ul>
+<li>Reboot</li>
+</ul>
+</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>Hopefully, Huawei will release updates for eNSP to make it easier for WSL users, including students who want to learn Huawei devices and take the HCIA exam in the future.</p>
+
+</content>
+<p style="text-align: center;">
+  
+  <a href="https://vanillabakar.github.io/blog/ensp/">#eNSP</a>
+  
+  <a href="https://vanillabakar.github.io/blog/wsl/">#WSL</a>
+  
+  <a href="https://vanillabakar.github.io/blog/huawei/">#Huawei</a>
+  
+  <a href="https://vanillabakar.github.io/blog/troubleshooting/">#Troubleshooting</a>
+  
+</p>
+
+  </main>
+  <footer>Made with a "small" customized and some love from <a href="https://github.com/janraasch/hugo-bearblog/"> Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
+
+    
+</body>
+
+</html>

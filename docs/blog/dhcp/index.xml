@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DHCP on /zxc/</title>
+    <link>https://vanillabakar.github.io/blog/dhcp/</link>
+    <description>Recent content in DHCP on /zxc/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2022, All.</copyright>
+    <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://vanillabakar.github.io/blog/dhcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writeup ITNSA 2021 - Packet Tracer Troubleshooting</title>
+      <link>https://vanillabakar.github.io/writeup-itnsa-2021-cisco-troubleshoot-pkt/</link>
+      <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://vanillabakar.github.io/writeup-itnsa-2021-cisco-troubleshoot-pkt/</guid>
+      <description>Table Of Contents Introduction Troubleshooting 1 (Point: 25) Questions Answers Troubleshooting 2 (Point: 25) Questions Answers Troubleshooting 3 (Point: 25) Questions Answers Troubleshooting 4 (Point: 25) Questions Answers Summary Introduction Hi, we meet again, this time we will try questions from the ITNSA section of Cisco Packet Tracer Troubleshooting, unlike the last question, we only try troubleshooting on the network that is already available. Let&amp;rsquo;s try, like usual, this question is done using Cisco Packet Tracer For those interested in trying it can be downloaded from this link ITNSA</description>
+    </item>
+    
+    <item>
+      <title>Writeup ITNSA 2021 - Network Actual &amp; Future Network</title>
+      <link>https://vanillabakar.github.io/writeup-itnsa-2021-cisco-pkt/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://vanillabakar.github.io/writeup-itnsa-2021-cisco-pkt/</guid>
+      <description>Table Of Contents Task 1 HQ MATARAM Server Configuration Completed Points: 8% Task 2 HQ MATARAM Router Configuration Completed Points: 19% Task 3 SW_HQ_L1 Switch Configuration at HQ MATARAM Completed Points: 5% Task 4 SW_HQ_L2 Switch Configuration on HQ MATARAM Completed Points: 3% Task 5 Admin2 PC Configuration and Verification at HQ MATARAM Completed Points: 0% Task 6 Wireless Controller (WLC) Configuration at HQ MATARAM Completed Points: 8% Task 7 LeighWeight Access Point (LWAP) Configuration at HQ MATARAM Completed Points: 0% Task 8 End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM Completed Points: 0% Task 9 BRANCH SUMBAWA Server Configuration Completed Points: 10% Task 10 BRANCH SUMBAWA Router Configuration Completed Points: 11% Task 11 SW_BRANCH Switch Configuration at BRANCH SUMBAWA Completed Points: 3% Task 12 DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA Completed Points: 0% Task 13 WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA Completed Points: 4% Task 14 End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA Completed Points: 2% Task 15 VPN Configuration on an HQ MATARAM Router utilizing GRE over IPSec and OSPF Completed Points: 8% Task 16 VPN Configuration on an BRANCH SUMBAWA Router utilizing GRE over IPSec and OSPF Completed Points: 8% Task 17 VPN Connection Verification from the End Device at HQ MATARAM Completed Points: 0% Task 18 VPN Connection Verification from the End Device at BRANCH SUMBAWA Completed Points: 0% Task 19 Roled Based Access Control (RBAC) configuration at router HQ MATARAM Completed Points: 1% Task 20 Roled Based Access Control (RBAC) configuration at router BRANCH SUMBAWA Completed Points: 1% Complete Configuration Router HQ MATARAM Router BRANCH SUMBAWA Summary Introduction So I was bored on the internet, looking for information about CCNA lab questions, when I came upon the 2021 LKS (Student Competency Competition) questions published by ITNSA.</description>
+    </item>
+    
+  </channel>
+</rss>

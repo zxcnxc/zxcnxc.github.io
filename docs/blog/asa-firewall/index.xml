@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ASA FIREWALL on /zxc/</title>
+    <link>https://vanillabakar.github.io/blog/asa-firewall/</link>
+    <description>Recent content in ASA FIREWALL on /zxc/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2022, All.</copyright>
+    <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://vanillabakar.github.io/blog/asa-firewall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writeup ITNSA 2021 - Packet Tracer Troubleshooting</title>
+      <link>https://vanillabakar.github.io/writeup-itnsa-2021-cisco-troubleshoot-pkt/</link>
+      <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://vanillabakar.github.io/writeup-itnsa-2021-cisco-troubleshoot-pkt/</guid>
+      <description>Table Of Contents Introduction Troubleshooting 1 (Point: 25) Questions Answers Troubleshooting 2 (Point: 25) Questions Answers Troubleshooting 3 (Point: 25) Questions Answers Troubleshooting 4 (Point: 25) Questions Answers Summary Introduction Hi, we meet again, this time we will try questions from the ITNSA section of Cisco Packet Tracer Troubleshooting, unlike the last question, we only try troubleshooting on the network that is already available. Let&amp;rsquo;s try, like usual, this question is done using Cisco Packet Tracer For those interested in trying it can be downloaded from this link ITNSA</description>
+    </item>
+    
+  </channel>
+</rss>
