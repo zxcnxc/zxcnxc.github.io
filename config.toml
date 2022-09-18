@@ -22,7 +22,7 @@ publishDir = "docs"
 disableKinds = ["taxonomy", "sitemap"]
 ignoreErrors = ["error-disable-taxonomy"]
 [permalinks]
-  blog = ":filename"
+  blog = "/:slug/"
   tags = "/blog/:slug"
 
 [params]

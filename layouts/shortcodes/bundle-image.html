@@ -1,0 +1,5 @@
+hello from the shortcode
+<!-- Within a shortcode we need $.Page to reach the page's resources. -->
+{{ range $.Page.Resources }}
+<li><a href="{{ .RelPermalink }}">{{ .ResourceType | title }}</a></li>
+{{ end }}
