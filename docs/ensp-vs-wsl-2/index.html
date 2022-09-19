@@ -2,9 +2,9 @@
 <html lang="en-US">
 
 <head>
-  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <meta name="google-site-verification" content="MTSHnqO7ph6E8W9gDl-H1tXE2ZrelQHw5VVqxp6EbLs" />
   <meta name="yandex-verification" content="449202b691de358e" />
   
@@ -12,7 +12,7 @@
 <title>eNSP VS WSL 2 | /zxc/</title>
 <meta name="title" content="eNSP VS WSL 2" />
 <meta name="description" content="When you want to try Huawei while doing something in WSL" />
-<meta name="keywords" content="eNSP,WSL,Huawei,Troubleshooting," />
+<meta name="keywords" content="eNSP,WSL,Huawei,Troubleshoot," />
 
 
 <meta property="og:title" content="eNSP VS WSL 2" />
@@ -36,25 +36,29 @@
 <meta itemprop="name" content="eNSP VS WSL 2">
 <meta itemprop="description" content="When you want to try Huawei while doing something in WSL"><meta itemprop="datePublished" content="2021-12-13T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-12-13T00:00:00+00:00" />
-<meta itemprop="wordCount" content="286"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
-<meta itemprop="keywords" content="eNSP,WSL,Huawei,Troubleshooting," />
+<meta itemprop="wordCount" content="296"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
+<meta itemprop="keywords" content="eNSP,WSL,Huawei,Troubleshoot," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
   body {
     font-family: Verdana, sans-serif;
     margin: auto;
-    padding: 20px;
+    padding: 22px;
     max-width: 720px;
     text-align: left;
     background-color: #333;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.5;
+    line-height: 1.7;
     color: #ddd;
+    font-size: 16px;
+    font-size: 120%;
   }
 
-  h1,
+  h1 {
+    color:#eee;
+  }
   h2,
   h3,
   h4,
@@ -107,6 +111,7 @@
 
   img {
     max-width: 100%;
+    height: auto;
   }
 
   code {
@@ -225,7 +230,9 @@
   }
 
 </style>
-
+<link rel="canonical" href="https://zxcnxc.github.io/ensp-vs-wsl-2/" />
+  
+  
 </head>
 
 <body>
@@ -250,7 +257,7 @@
     </time>    
 </p>Estimated Reading time: 2 minutes
 <content>
-  <hr>
+  <hr />
 <div>
     <h2>Table Of Contents</h2>
     <nav id="TableOfContents">
@@ -263,18 +270,46 @@
   </ul>
 </nav>
 </div>
-<hr>
+<hr />
 <h2 id="tldr">TLDR</h2>
 <p>Conflicts between Hypervisor.</p>
 <h2 id="issues">Issues</h2>
 <p>I wanted to learn more about Huawei devices, so i chose the Huawei Enterprise Network Simulator Platform <a href="https://support.huawei.com/enterprise/en/data-communication/ensp-pid-9017384?category=installation-upgrade">eNSP</a> to simulate an enterprise network. <br>
 So I followed the tutorial from a blog on the internet, but when I tried to run the program, I got the error message &ldquo;Failed to start device AR1 error code 40.&rdquo; in eNSP.
 <br></p>
-<p><img src="/images/HYPERVSWSL/huawei.png" alt="Error40"></p>
+
+
+
+  <figure>
+    <a href="/ensp-vs-wsl-2/huawei.png">
+      <img
+        srcset="
+          /ensp-vs-wsl-2/huawei_hu12665b6b6eeabf1c49800ebcdaf8a1e7_142995_320x0_resize_box_3.png 320w,
+          /ensp-vs-wsl-2/huawei_hu12665b6b6eeabf1c49800ebcdaf8a1e7_142995_600x0_resize_box_3.png 600w,
+          /ensp-vs-wsl-2/huawei_hu12665b6b6eeabf1c49800ebcdaf8a1e7_142995_1200x0_resize_box_3.png 2x"
+        src="/ensp-vs-wsl-2/huawei_hu12665b6b6eeabf1c49800ebcdaf8a1e7_142995_600x0_resize_box_3.png" alt="Error 40"/>
+    </a>
+    <figcaption><p style="text-align: center;">Failed to start device AR1</p></figcaption>
+  </figure>
+
 <p>Then I searched for the error code message and found that WSL is incompatible with Virtualbox because WSL uses Virtual Platform and eNSP requires VirtualBox to run the simulation. <a href="https://superuser.com/questions/1208850/why-cant-virtualbox-or-vmware-run-with-hyper-v-enabled-on-windows-10">1</a> <br></p>
 <p>Why not use the latest version of VirtualBox that supports Hyper-V?<br></p>
 <p>Unfortunately, until now, there has been no update from Huawei for eNSP. So if we try to install the latest VirtualBox and then run eNSP, an error message &ldquo;VirtualBox version is not supported&rdquo; will appear.</p>
-<p><img src="/images/HYPERVSWSL/errorhuawei.png" alt="ErrorNotSupport"></p>
+
+
+
+  <figure>
+    <a href="/ensp-vs-wsl-2/errorhuawei.png">
+      <img
+        srcset="
+          /ensp-vs-wsl-2/errorhuawei_huda36dbdacb04b0256a8806329a855198_19674_320x0_resize_box_3.png 320w,
+          /ensp-vs-wsl-2/errorhuawei_huda36dbdacb04b0256a8806329a855198_19674_600x0_resize_box_3.png 600w,
+          /ensp-vs-wsl-2/errorhuawei_huda36dbdacb04b0256a8806329a855198_19674_1200x0_resize_box_3.png 2x"
+        src="/ensp-vs-wsl-2/errorhuawei_huda36dbdacb04b0256a8806329a855198_19674_600x0_resize_box_3.png" alt="Error Not Support"/>
+    </a>
+    <figcaption><p style="text-align: center;">Virtualbox version not supported</p></figcaption>
+  </figure>
+
 <h2 id="setup">Setup</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>OS Version : Windows 10 Pro 64bit Build 19044
 </span></span><span style="display:flex;"><span>Virtuabox Version : 5.2.44 r139111 (Qt5.6.2) 
@@ -301,9 +336,23 @@ To disable Virtual Machine Platform in Control Panel, follow these steps:</p>
 <ul>
 <li>In Control Panel, select Programs and Features.</li>
 <li>Select Turn Windows features on or off.</li>
-<li>Clear the Virtual Machine Platform check box.</li>
+<li>Uncheck the Virtual Machine Platform.</li>
 </ul>
-<p><img src="/images/HYPERVSWSL/hyper.PNG" alt="hyperv"></p>
+
+    
+    
+      <figure>
+        <a href="/ensp-vs-wsl-2/hyper.PNG">
+          <img
+            srcset="
+              /ensp-vs-wsl-2/hyper_huc20008464002f0a929aac37f82cce08e_33299_320x0_resize_box_3.PNG 320w,
+              /ensp-vs-wsl-2/hyper_huc20008464002f0a929aac37f82cce08e_33299_600x0_resize_box_3.PNG 600w,
+              /ensp-vs-wsl-2/hyper_huc20008464002f0a929aac37f82cce08e_33299_1200x0_resize_box_3.PNG 2x"
+            src="/ensp-vs-wsl-2/hyper_huc20008464002f0a929aac37f82cce08e_33299_600x0_resize_box_3.PNG" alt="Hyper-V"/>
+        </a>
+        <figcaption><p style="text-align: center;">Uncheck Virtual Machine</p></figcaption>
+      </figure>
+
 <ul>
 <li>Reboot</li>
 </ul>
@@ -314,14 +363,6 @@ To disable Virtual Machine Platform in Control Panel, follow these steps:</p>
 
 </content>
 <p style="text-align: center;">
-  
-  <a href="https://zxcnxc.github.io/blog/ensp/">#eNSP</a>
-  
-  <a href="https://zxcnxc.github.io/blog/wsl/">#WSL</a>
-  
-  <a href="https://zxcnxc.github.io/blog/huawei/">#Huawei</a>
-  
-  <a href="https://zxcnxc.github.io/blog/troubleshooting/">#Troubleshooting</a>
   
 </p>
 

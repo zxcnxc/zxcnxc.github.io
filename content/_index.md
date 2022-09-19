@@ -1,7 +1,6 @@
 +++
 title = "Home"
-description = "When Weebs meets a Networking"
+description = "When a miserable weeb meets a Network, Servers, and Privacy."
 +++
 
-
-{{< bundle-image name="home.webp" alt="Welcome" caption="God's in his heaven— / All's right with the world!" >}}
+{{< bundle-image name="home.webp" alt="God's in his heaven— / All's right with the world!">}}

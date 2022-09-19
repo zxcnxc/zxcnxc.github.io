@@ -1,6 +1,6 @@
 +++
 title = "About"
-description = "Hi! It's Me"
+description = "Hello, I'm a random guy who enjoys IT, especially obscure technologies, cheese, and weeaboo stuff."
 +++
 
 ```HTML

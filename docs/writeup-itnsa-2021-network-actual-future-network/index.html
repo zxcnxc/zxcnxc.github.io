@@ -2,21 +2,21 @@
 <html lang="en-US">
 
 <head>
-  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <meta name="google-site-verification" content="MTSHnqO7ph6E8W9gDl-H1tXE2ZrelQHw5VVqxp6EbLs" />
   <meta name="yandex-verification" content="449202b691de358e" />
   
 <link rel="shortcut icon" href="https://zxcnxc.github.io/images/favicon-32x32.png" />
 <title>Writeup ITNSA 2021 - Network Actual &amp; Future Network | /zxc/</title>
 <meta name="title" content="Writeup ITNSA 2021 - Network Actual &amp; Future Network" />
-<meta name="description" content="Writeup for ITNSA 2021 Module A : Network Actual &amp; Future Network" />
+<meta name="description" content="Build a corporate network from the ground up using Cisco devices." />
 <meta name="keywords" content="Cisco,ITNSA,Packet Tracer,GRE OVER IPSEC,OSPF,DHCP,NAT,NTP,RBAC,WLC,LWAP,InterVLAN,RADIUS," />
 
 
 <meta property="og:title" content="Writeup ITNSA 2021 - Network Actual &amp; Future Network" />
-<meta property="og:description" content="Writeup for ITNSA 2021 Module A : Network Actual &amp; Future Network" />
+<meta property="og:description" content="Build a corporate network from the ground up using Cisco devices." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zxcnxc.github.io/writeup-itnsa-2021-network-actual-future-network/" /><meta property="og:image" content="https://zxcnxc.github.io/images/home.png"/><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2022-03-15T00:00:00+00:00" />
@@ -29,14 +29,14 @@
 <meta name="twitter:image" content="https://zxcnxc.github.io/images/home.png"/>
 
 <meta name="twitter:title" content="Writeup ITNSA 2021 - Network Actual &amp; Future Network"/>
-<meta name="twitter:description" content="Writeup for ITNSA 2021 Module A : Network Actual &amp; Future Network"/>
+<meta name="twitter:description" content="Build a corporate network from the ground up using Cisco devices."/>
 
 
 
 <meta itemprop="name" content="Writeup ITNSA 2021 - Network Actual &amp; Future Network">
-<meta itemprop="description" content="Writeup for ITNSA 2021 Module A : Network Actual &amp; Future Network"><meta itemprop="datePublished" content="2022-03-15T00:00:00+00:00" />
+<meta itemprop="description" content="Build a corporate network from the ground up using Cisco devices."><meta itemprop="datePublished" content="2022-03-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="9263"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
+<meta itemprop="wordCount" content="9060"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
 <meta itemprop="keywords" content="Cisco,ITNSA,Packet Tracer,GRE OVER IPSEC,OSPF,DHCP,NAT,NTP,RBAC,WLC,LWAP,InterVLAN,RADIUS," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -44,17 +44,21 @@
   body {
     font-family: Verdana, sans-serif;
     margin: auto;
-    padding: 20px;
+    padding: 22px;
     max-width: 720px;
     text-align: left;
     background-color: #333;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.5;
+    line-height: 1.7;
     color: #ddd;
+    font-size: 16px;
+    font-size: 120%;
   }
 
-  h1,
+  h1 {
+    color:#eee;
+  }
   h2,
   h3,
   h4,
@@ -107,6 +111,7 @@
 
   img {
     max-width: 100%;
+    height: auto;
   }
 
   code {
@@ -225,7 +230,9 @@
   }
 
 </style>
-
+<link rel="canonical" href="https://zxcnxc.github.io/writeup-itnsa-2021-network-actual-future-network/" />
+  
+  
 </head>
 
 <body>
@@ -248,10 +255,10 @@
     <time datetime='2022-03-15' pubdate>
       15 Mar, 2022 
     </time>    
-</p>Estimated Reading time: 44 minutes
+</p>Estimated Reading time: 43 minutes
 <content>
-  <hr>
-<p><a id="top"></a></p>
+  <hr />
+<p><a name="top"></a></p>
 <div>
     <h2>Table Of Contents</h2>
     <nav id="TableOfContents">
@@ -386,7 +393,7 @@
   </ul>
 </nav>
 </div>
-<hr>
+<hr />
 <h1 id="introduction">Introduction</h1>
 <p>So I was bored on the internet, looking for information about CCNA lab questions, when I came upon the 2021 LKS (Student Competency Competition) questions published by ITNSA.</p>
 <p>The lab is divided into three categories:</p>
@@ -397,27 +404,83 @@
 </ol>
 <p>This lab has 20 problems that require us to configure the Server, Router, Wireless Router, and Client Verification.</p>
 <p>This lab is done using <a href="https://www.netacad.com/courses/packet-tracer">Cisco Packet Tracer version 8.1</a>.<br>
-The lab download link is available <a href="https://drive.google.com/file/d/1pFU9v1WX_XH-4FkNXJH-pzzBErqbfBaN/view?usp=sharing">here</a>.</p>
-<p><img src="/images/ITNSA-MODULE-A/Topology-ITNSA.PNG" alt="Topology"></p>
-<hr>
+The lab download link is available <a href="https://drive.google.com/file/d/1pFU9v1WX_XH-4FkNXJH-pzzBErqbfBaN/view?usp=sharing">ITNSA</a>.</p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/Topology-ITNSA.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/Topology-ITNSA_hu23a07ad82731c3566cdfff960a62ce53_100930_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/Topology-ITNSA_hu23a07ad82731c3566cdfff960a62ce53_100930_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/Topology-ITNSA_hu23a07ad82731c3566cdfff960a62ce53_100930_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/Topology-ITNSA_hu23a07ad82731c3566cdfff960a62ce53_100930_600x0_resize_box_3.PNG" alt="TOPOLOGY"/>
+    </a>
+    <figcaption><p style="text-align: center;">Topology ITNSA Module A</p></figcaption>
+  </figure>
+
+<hr />
 <h2 id="task-1">Task 1</h2>
 <h3 id="hq-mataram-server-configuration">HQ MATARAM Server Configuration</h3>
 <ol>
 <li>
-<p>Set the IP addressing and default gateway and DNS on the HQ Server with the following conditions: <br></p>
+<p>Set the IP addressing and default gateway and DNS on the HQ Server with the following conditions:</p>
 <ul>
-<li>IP Address: the second IP address of subnet 10.0.14.0/30.<br></li>
+<li>IP Address: the second IP address of subnet 10.0.14.0/30.</li>
 </ul>
-<p><img src="/images/ITNSA-MODULE-A/IP-Subnet-HQ-Mataram.PNG" alt="IP-HQ-Server-HQ-Mataram"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/IP-Subnet-HQ-Mataram.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/IP-Subnet-HQ-Mataram_hucd476bb5b5a33910e9385376c321ed7b_26284_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/IP-Subnet-HQ-Mataram_hucd476bb5b5a33910e9385376c321ed7b_26284_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/IP-Subnet-HQ-Mataram_hucd476bb5b5a33910e9385376c321ed7b_26284_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/IP-Subnet-HQ-Mataram_hucd476bb5b5a33910e9385376c321ed7b_26284_600x0_resize_box_3.PNG" alt="IP Address at HQ MATARAM"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 <ul>
-<li>Default Gateway: the first IP address of subnet 10.0.14.0/30.<br></li>
-<li>DNS Server: 192.0.2.1<br></li>
+<li>Default Gateway: the first IP address of subnet 10.0.14.0/30.</li>
+<li>DNS Server: 192.0.2.1</li>
 </ul>
-<p><img src="/images/ITNSA-MODULE-A/Gateway-DNS-HQ-Mataram.PNG" alt="IP-GW-DNS-Server-HQ-Mataram"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Mataram.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Mataram_hu407ffe4cfe9880a79bf83b92772aba72_23289_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Mataram_hu407ffe4cfe9880a79bf83b92772aba72_23289_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Mataram_hu407ffe4cfe9880a79bf83b92772aba72_23289_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Mataram_hu407ffe4cfe9880a79bf83b92772aba72_23289_600x0_resize_box_3.PNG" alt="Gateway and DNS at HQ MATARAM"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Enable HTTP and HTTPS services.</p>
-<p><img src="/images/ITNSA-MODULE-A/HTTP-HTTPS-HQ-MATARAM.PNG" alt="HTTP-HTTPS-Server-HQ-Mataram"><br></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-HQ-MATARAM.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-HQ-MATARAM_hue5a068f91a618c7f0984864dc766fcf2_23592_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-HQ-MATARAM_hue5a068f91a618c7f0984864dc766fcf2_23592_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-HQ-MATARAM_hue5a068f91a618c7f0984864dc766fcf2_23592_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-HQ-MATARAM_hue5a068f91a618c7f0984864dc766fcf2_23592_600x0_resize_box_3.PNG" alt="Enable HTTP and HTTPS services"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Enable AAA service and configure Network Configuration with Server Radius type and User Setup as given in the table below:</p>
@@ -477,12 +540,26 @@ The lab download link is available <a href="https://drive.google.com/file/d/1pFU
 </tr>
 </tbody>
 </table>
-<p><img src="/images/ITNSA-MODULE-A/AAA-HQ-Mataram.PNG" alt="AAA-Server-HQ-Mataram"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/AAA-HQ-Mataram.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/AAA-HQ-Mataram_hu808acf5e2b01473843d744645fd4dc48_33269_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/AAA-HQ-Mataram_hu808acf5e2b01473843d744645fd4dc48_33269_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/AAA-HQ-Mataram_hu808acf5e2b01473843d744645fd4dc48_33269_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/AAA-HQ-Mataram_hu808acf5e2b01473843d744645fd4dc48_33269_600x0_resize_box_3.PNG" alt="Enable AAA service"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 </ol>
 <h3 id="completed-points-8">Completed Points: 8%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-2">Task 2</h2>
 <h3 id="hq-mataram-router-configuration">HQ MATARAM Router Configuration</h3>
 <ol>
@@ -556,7 +633,7 @@ The following conditions are used to assign IP addresses to each subinterface:<b
 </span></span><span style="display:flex;"><span>HQ(config-subif)#ip address 10.0.13.1 255.255.255.0
 </span></span></code></pre></div><ol start="6">
 <li>
-<p>Creating a DHCP Server:<br></p>
+<p>Creating a DHCP Server:</p>
 <ul>
 <li>Pool name &ldquo;HRD&rdquo; for VLAN 11 with subnet 10.0.11.0/24.</li>
 <li>Pool name &ldquo;MARKETING&rdquo; for VLAN 12 with subnet 10.0.12.0/24.</li>
@@ -584,16 +661,16 @@ The following conditions are used to assign IP addresses to each subinterface:<b
 </span></span><span style="display:flex;"><span>HQ(dhcp-config)#network 10.0.13.0 255.255.255.0
 </span></span><span style="display:flex;"><span>HQ(dhcp-config)#default-router 10.0.13.1
 </span></span><span style="display:flex;"><span>HQ(dhcp-config)#dns-server 192.0.2.1
-</span></span></code></pre></div><p>For each pool, specify the IP address that is not leased to the DHCP Client :</p>
+</span></span></code></pre></div><p>For each pool, specify the IP address that is not leased to the DHCP Client:</p>
 <ul>
-<li>The initial IP address of the VLAN 11 HRD and VLAN 12 MARKETING subnet addresses.<br></li>
-<li>The first through fourth IP addresses of VLAN 13 NATIVE&rsquo;s subnet addresses.<br></li>
+<li>The initial IP address of the VLAN 11 HRD and VLAN 12 MARKETING subnet addresses.</li>
+<li>The first through fourth IP addresses of VLAN 13 NATIVE&rsquo;s subnet addresses.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>HQ(config)#ip dhcp excluded-address 10.0.11.1
 </span></span><span style="display:flex;"><span>HQ(config)#ip dhcp excluded-address 10.0.12.1
 </span></span><span style="display:flex;"><span>HQ(config)#ip dhcp excluded-address 10.0.13.1 10.0.13.4
 </span></span></code></pre></div><ol start="7">
-<li>Set the default route to the ISP using the gateway of the first IP address in the subnet 192.0.2.16/29 used by the ISP router&rsquo;s Serial0/0/0 interface.<br></li>
+<li>Set the default route to the ISP using the gateway of the first IP address in the subnet 192.0.2.16/29 used by the ISP router&rsquo;s Serial0/0/0 interface.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>HQ(config)#ip route 0.0.0.0 0.0.0.0 192.0.2.17
 </span></span></code></pre></div><ol start="8">
@@ -622,7 +699,7 @@ Ensure that only emails from gmail.com can be sent and received by the hosts on 
 </span></span><span style="display:flex;"><span>HQ(config-if-range)#ip nat inside
 </span></span><span style="display:flex;"><span>HQ(config)#ip nat inside source list ALLOW-INTERNET interface s0/0/0 overload
 </span></span></code></pre></div><ol start="10">
-<li>Set static NAT so that ONLY HTTP and HTTPS services on the HQ server with Private IP address 10.0.14.2 are translated to Public IP address 192.0.2.19.<br></li>
+<li>Set static NAT so that ONLY HTTP and HTTPS services on the HQ server with Private IP address 10.0.14.2 are translated to Public IP address 192.0.2.19.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>HQ(config)#ip nat inside source static 10.0.14.2 192.0.2.19
 </span></span><span style="display:flex;"><span>HQ(config)#int g0/1
@@ -835,29 +912,29 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>HQ#
 </span></span></code></pre></div><h3 id="completed-points--19">Completed Points:  19%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-3">Task 3</h2>
 <h3 id="sw_hq_l1-switch-configuration-at-hq-mataram">SW_HQ_L1 Switch Configuration at HQ MATARAM</h3>
 <ol>
-<li>Set the hostname of the Switch with the name &ldquo;SW_HQ_L1&rdquo;.  <br></li>
+<li>Set the hostname of the Switch with the name &ldquo;SW_HQ_L1&rdquo;.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>Switch&gt;en
 </span></span><span style="display:flex;"><span>Switch#conf t
 </span></span><span style="display:flex;"><span>Enter configuration commands, one per line.  End with CNTL/Z.
 </span></span><span style="display:flex;"><span>Switch(config)#hostname SW_HQ_L1
 </span></span></code></pre></div><ol start="2">
-<li>Set the VTP with the domain name &ldquo;MANDALIKA&rdquo; and password using &ldquo;LksNTB&rdquo;.  <br></li>
+<li>Set the VTP with the domain name &ldquo;MANDALIKA&rdquo; and password using &ldquo;LksNTB&rdquo;.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L1(config)#vtp domain MANDALIKA
 </span></span><span style="display:flex;"><span>Changing VTP domain name from NULL to MANDALIKA
 </span></span><span style="display:flex;"><span>SW_HQ_L1(config)#vtp password LksNTB
 </span></span><span style="display:flex;"><span>Setting device VLAN database password to LksNTB
 </span></span></code></pre></div><ol start="3">
-<li>Creating new VLANs, among others: <br>
+<li>Creating new VLANs, among others:
 <ul>
-<li>VLAN 11 with the name HRD. <br></li>
-<li>VLAN 12 with the name MARKETING. <br></li>
-<li>VLAN 13 with the name NATIVE. <br></li>
+<li>VLAN 11 with the name HRD.</li>
+<li>VLAN 12 with the name MARKETING.</li>
+<li>VLAN 13 with the name NATIVE.</li>
 </ul>
 </li>
 </ol>
@@ -874,13 +951,13 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>12   MARKETING                        active    
 </span></span><span style="display:flex;"><span>13   NATIVE                           active    
 </span></span></code></pre></div><ol start="4">
-<li>Set the IP addressing on the VLAN 13 interface with the second IP address of the subnet address 10.0.13.0/24. <br></li>
+<li>Set the IP addressing on the VLAN 13 interface with the second IP address of the subnet address 10.0.13.0/24.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L1(config)#int vlan 13
 </span></span><span style="display:flex;"><span>%LINK-5-CHANGED: Interface Vlan13, changed state to up
 </span></span><span style="display:flex;"><span>SW_HQ_L1(config-if)#ip address 10.0.13.2 255.255.255.0
 </span></span></code></pre></div><ol start="5">
-<li>Set the default gateway using the first IP address of the subnet address 10.0.13.0/24, one of the IP addresses on the HQ router, so that it can communicate with different networks. <br></li>
+<li>Set the default gateway using the first IP address of the subnet address 10.0.13.0/24, one of the IP addresses on the HQ router, so that it can communicate with different networks.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L1(config)#ip default-gateway 10.0.13.1
 </span></span></code></pre></div><ol start="6">
@@ -891,7 +968,7 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>SW_HQ_L1(config-if)#switchport access vlan 13
 </span></span><span style="display:flex;"><span>%LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan13, changed state to up
 </span></span></code></pre></div><ol start="7">
-<li>Enable port mode to trunk for interfaces FastEthernet0/10, FastEthernet0/11, GigabitEthernet0/1 and GigabitEthernet0/2.<br>
+<li>Enable port mode to trunk for interfaces FastEthernet0/10, FastEthernet0/11, GigabitEthernet0/1 and GigabitEthernet0/2.
 <b>Notes</b>: VLAN 13 is enabled as a native VLAN.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L1(config)#int ra fa0/10 - fa0/11
@@ -914,7 +991,7 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to down
 </span></span><span style="display:flex;"><span>%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
 </span></span></code></pre></div><ol start="8">
-<li>Verify the configuration that has been done to ensure that it is following the requirements. <br></li>
+<li>Verify the configuration that has been done to ensure that it is following the requirements.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L1#sh run
 </span></span><span style="display:flex;"><span>Building configuration...
@@ -935,22 +1012,6 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>switchport access vlan 13
 </span></span><span style="display:flex;"><span>switchport mode access
 </span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/2
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/3
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/4
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/5
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/6
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/7
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/8
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/9
-</span></span><span style="display:flex;"><span>!
 </span></span><span style="display:flex;"><span>interface FastEthernet0/10
 </span></span><span style="display:flex;"><span>switchport trunk native vlan 13
 </span></span><span style="display:flex;"><span>switchport trunk allowed vlan 11-13
@@ -960,32 +1021,6 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>switchport trunk native vlan 13
 </span></span><span style="display:flex;"><span>switchport trunk allowed vlan 11-13
 </span></span><span style="display:flex;"><span>switchport mode trunk
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/12
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/13
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/14
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/15
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/16
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/17
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/18
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/19
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/20
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/21
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/22
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/23
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/24
 </span></span><span style="display:flex;"><span>!
 </span></span><span style="display:flex;"><span>interface GigabitEthernet0/1
 </span></span><span style="display:flex;"><span>switchport trunk native vlan 13
@@ -1018,18 +1053,18 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>SW_HQ_L1#
 </span></span></code></pre></div><h3 id="completed-points-5">Completed Points: 5%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-4">Task 4</h2>
 <h3 id="sw_hq_l2-switch-configuration-on-hq-mataram">SW_HQ_L2 Switch Configuration on HQ MATARAM</h3>
 <ol>
-<li>Set the hostname of the Switch with the name “SW_HQ_L2”. <br></li>
+<li>Set the hostname of the Switch with the name “SW_HQ_L2”.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>Switch#en
 </span></span><span style="display:flex;"><span>Switch#conf t
 </span></span><span style="display:flex;"><span>Enter configuration commands, one per line.  End with CNTL/Z.
 </span></span><span style="display:flex;"><span>Switch(config)#hostname SW_HQ_L2
 </span></span></code></pre></div><ol start="2">
-<li>Set up VTP with Client mode, domain name &ldquo;MANDALIKA&rdquo; and password using &ldquo;LksNTB&rdquo;. <br></li>
+<li>Set up VTP with Client mode, domain name &ldquo;MANDALIKA&rdquo; and password using &ldquo;LksNTB&rdquo;.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L2(config)#vtp mode client 
 </span></span><span style="display:flex;"><span>Setting device to VTP CLIENT mode.
@@ -1038,16 +1073,16 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>SW_HQ_L2(config)#vtp password LksNTB
 </span></span><span style="display:flex;"><span>Setting device VLAN database password to LksNTB
 </span></span></code></pre></div><ol start="3">
-<li>Set the IP addressing on interface VLAN 13 with the third IP address from subnet address 10.0.13.0/24. <br></li>
+<li>Set the IP addressing on interface VLAN 13 with the third IP address from subnet address 10.0.13.0/24.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L2(config)#int vlan 13
 </span></span><span style="display:flex;"><span>SW_HQ_L2(config-if)#ip address 10.0.13.3 255.255.255.0
 </span></span></code></pre></div><ol start="4">
-<li>Set the default gateway using the first IP address of the subnet address 10.0.13.0/24, one of the IP addresses on the HQ router, so that it can communicate with different networks. <br></li>
+<li>Set the default gateway using the first IP address of the subnet address 10.0.13.0/24, one of the IP addresses on the HQ router, so that it can communicate with different networks.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L2(config)#ip default-gateway 10.0.13.1
 </span></span></code></pre></div><ol start="5">
-<li>Enable port mode to trunk for the FastEthernet0/20 and GigabitEthernet0/2 interfaces. <br>
+<li>Enable port mode to trunk for the FastEthernet0/20 and GigabitEthernet0/2 interfaces.
 <b>Notes</b>: VLAN 13 is enabled as a native VLAN.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_HQ_L2(config)#int fa0/20
@@ -1081,58 +1116,10 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>spanning-tree mode pvst
 </span></span><span style="display:flex;"><span>spanning-tree extend system-id
 </span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/1
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/2
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/3
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/4
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/5
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/6
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/7
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/8
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/9
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/10
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/11
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/12
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/13
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/14
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/15
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/16
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/17
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/18
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/19
-</span></span><span style="display:flex;"><span>!
 </span></span><span style="display:flex;"><span>interface FastEthernet0/20
 </span></span><span style="display:flex;"><span>switchport trunk native vlan 13
 </span></span><span style="display:flex;"><span>switchport trunk allowed vlan 11-13
 </span></span><span style="display:flex;"><span>switchport mode trunk
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/21
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/22
-</span></span><span style="display:flex;"><span>interface FastEthernet0/23
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/24
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface GigabitEthernet0/1
 </span></span><span style="display:flex;"><span>!
 </span></span><span style="display:flex;"><span>interface GigabitEthernet0/2
 </span></span><span style="display:flex;"><span>switchport trunk native vlan 13
@@ -1157,56 +1144,153 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>!
 </span></span><span style="display:flex;"><span>end
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>SW_HQ_L2#
 </span></span></code></pre></div><h3 id="completed-points-3">Completed Points: 3%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-5">Task 5</h2>
 <h3 id="admin2-pc-configuration-and-verification-at-hq-mataram">Admin2 PC Configuration and Verification at HQ MATARAM</h3>
 <ol>
 <li>
 <p>Set up the DHCP Client on the Admin2 PC at the MATARAM head office. <br>
 Ensure the PC successfully obtains dynamic IP addressing from the DHCP Server.</p>
-<p><img src="/images/ITNSA-MODULE-A/PC_Admin2_DHCP.PNG" alt="PC_ADMIN2"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/PC_Admin2_DHCP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/PC_Admin2_DHCP_hu3911110c9b04c9df70683dfb062aaea6_23094_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Admin2_DHCP_hu3911110c9b04c9df70683dfb062aaea6_23094_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Admin2_DHCP_hu3911110c9b04c9df70683dfb062aaea6_23094_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/PC_Admin2_DHCP_hu3911110c9b04c9df70683dfb062aaea6_23094_600x0_resize_box_3.PNG" alt="PC Admin2 successfull obtained DHCP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
-<p>Verify PC Admin2 to Switch SW_HQ_L1 and Router HQ using Simple PDU.<br>
-Make sure the connection is successful.
-<img src="/images/ITNSA-MODULE-A/SimplePDU_PC_Admin2_Switch_And_RouterHQ.PNG" alt="SimplePDUPC_ADMIN2"></p>
+<p>Verify PC Admin2 to Switch SW_HQ_L1 and Router HQ using Simple PDU. <br>
+Make sure the connection is successful.</p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_PC_Admin2_Switch_And_RouterHQ.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_PC_Admin2_Switch_And_RouterHQ_hu1165ecf0c165002f4dff02236d542586_7462_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_PC_Admin2_Switch_And_RouterHQ_hu1165ecf0c165002f4dff02236d542586_7462_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_PC_Admin2_Switch_And_RouterHQ_hu1165ecf0c165002f4dff02236d542586_7462_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_PC_Admin2_Switch_And_RouterHQ_hu1165ecf0c165002f4dff02236d542586_7462_600x0_resize_box_3.PNG" alt="SimplePDU connection to SW and RouterHQ Successful"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 </ol>
 <h3 id="completed-points-0">Completed Points: 0%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-6">Task 6</h2>
 <h3 id="wireless-controller-wlc-configuration-at-hq-mataram">Wireless Controller (WLC) Configuration at HQ MATARAM</h3>
 <ol>
 <li>
 <p>Perform the initial setup on the WLC HQ using the browser from the PC Admin1 desktop by entering the WLC&rsquo;s IP address, which is http://192.168.1.1. <br>
 Create a new administrator account with the username &ldquo;admin&rdquo; and the password &ldquo;LksNTB2021.&rdquo;</p>
-<p><img src="/images/ITNSA-MODULE-A/PC_Admin1_WLC_Setup.PNG" alt="PC_Admin1_WLC_SETUP"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/PC_Admin1_WLC_Setup.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/PC_Admin1_WLC_Setup_hu5b4dcfad72982027ce78ba4f55d9dfed_36233_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Admin1_WLC_Setup_hu5b4dcfad72982027ce78ba4f55d9dfed_36233_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Admin1_WLC_Setup_hu5b4dcfad72982027ce78ba4f55d9dfed_36233_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/PC_Admin1_WLC_Setup_hu5b4dcfad72982027ce78ba4f55d9dfed_36233_600x0_resize_box_3.PNG" alt="Initial WLC Setup at PD Admin1"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
-<p>Configure the Controller with the following conditions: <br></p>
+<p>Configure the Controller with the following conditions:</p>
 <ul>
-<li>System Name: WLC_HQ <br></li>
-<li>Management IP Address: using the 4th IP address from subnet 10.0.13.0/24 <br></li>
-<li>Default Gateway: using the 1st IP address from subnet 10.0.13.0/24 <br></li>
-<li>Management VLAN ID: 1 <br></li>
-<li>WLAN configuration with Network Name &ldquo;TEST&rdquo; and Passphrase &ldquo;LksNTB2021&rdquo;. <br></li>
+<li>System Name: WLC_HQ</li>
+<li>Management IP Address: using the 4th IP address from subnet 10.0.13.0/24</li>
+<li>Default Gateway: using the 1st IP address from subnet 10.0.13.0/24</li>
+<li>Management VLAN ID: 1</li>
+<li>WLAN configuration with Network Name &ldquo;TEST&rdquo; and Passphrase &ldquo;LksNTB2021&rdquo;.</li>
 </ul>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_Setup_Controller.PNG" alt="PC_Admin1_WLC_SETUP"></p>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_Setup_Wireless_Network.PNG" alt="PC_Admin1_WLC_WIRELESS_SETUP"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Wireless_Network.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Wireless_Network_hu97ec8ced97a685e6234cf935c256c9fb_25349_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Wireless_Network_hu97ec8ced97a685e6234cf935c256c9fb_25349_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Wireless_Network_hu97ec8ced97a685e6234cf935c256c9fb_25349_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Wireless_Network_hu97ec8ced97a685e6234cf935c256c9fb_25349_600x0_resize_box_3.PNG" alt="Wireless Setup for WLC_HQ"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Controller.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Controller_huafb604de01c24295890a3dae05f6b075_26354_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Controller_huafb604de01c24295890a3dae05f6b075_26354_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Controller_huafb604de01c24295890a3dae05f6b075_26354_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Setup_Controller_huafb604de01c24295890a3dae05f6b075_26354_600x0_resize_box_3.PNG" alt="Controller Setup for WLC_HQ"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>After the initial setup is completed, the WLC_HQ configuration can be done through a browser from the PC_Admin2 desktop by accessing the IP address of the WLC via HTTPS, https://10.0.13.4. <br>
 Login using username &ldquo;admin&rdquo; and password &ldquo;LksNTB2021&rdquo;.</p>
-<p><img src="/images/ITNSA-MODULE-A/PC_admin2_WLC.PNG" alt="PC_Admin2_WLC_SETUP"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/PC_admin2_WLC.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/PC_admin2_WLC_hu093c969936a6b40ac0e1eec87acd9799_35013_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_admin2_WLC_hu093c969936a6b40ac0e1eec87acd9799_35013_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_admin2_WLC_hu093c969936a6b40ac0e1eec87acd9799_35013_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/PC_admin2_WLC_hu093c969936a6b40ac0e1eec87acd9799_35013_600x0_resize_box_3.PNG" alt="Access WLC from PC Admin2"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Delete the WLAN with Network Name &ldquo;TEST&rdquo;.</p>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_Remove_Guest.PNG" alt="WLC_Remove_Guest"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Remove_Guest.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Remove_Guest_hu013968e3bcaceb0d0fbbc496449a49d3_4792_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Remove_Guest_hu013968e3bcaceb0d0fbbc496449a49d3_4792_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Remove_Guest_hu013968e3bcaceb0d0fbbc496449a49d3_4792_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Remove_Guest_hu013968e3bcaceb0d0fbbc496449a49d3_4792_600x0_resize_box_3.PNG" alt="Delete WLAN TEST"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Configure a new VLAN interface on the WLC with the following requirements:</p>
@@ -1237,12 +1321,54 @@ Login using username &ldquo;admin&rdquo; and password &ldquo;LksNTB2021&rdquo;.<
 </tr>
 </tbody>
 </table>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_VLAN11.PNG" alt="WLC_HQ_VLAN11">
-<img src="/images/ITNSA-MODULE-A/WLC_HQ_VLAN12.PNG" alt="WLC_HQ_VLAN12"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN11.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN11_hu63cf6a24c82a09ed6b6b68e0598d6fe0_17007_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN11_hu63cf6a24c82a09ed6b6b68e0598d6fe0_17007_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN11_hu63cf6a24c82a09ed6b6b68e0598d6fe0_17007_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN11_hu63cf6a24c82a09ed6b6b68e0598d6fe0_17007_600x0_resize_box_3.PNG" alt="WLC_HQ VLAN 11"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN12.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN12_hu5c15f2b704639ddb36678f801b62d896_22213_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN12_hu5c15f2b704639ddb36678f801b62d896_22213_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN12_hu5c15f2b704639ddb36678f801b62d896_22213_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_VLAN12_hu5c15f2b704639ddb36678f801b62d896_22213_600x0_resize_box_3.PNG" alt="WLC_HQ VLAN 12"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Configure the WLC to authenticate WLAN users using a RADIUS server with the subnet&rsquo;s second IP address, 10.0.14.0/30, and the shared secret &ldquo;SMKHebat2021&rdquo;.</p>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_Radius_Setup.PNG" alt="WLC_HQ_RADIUS"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Radius_Setup.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Radius_Setup_hudc4b26cce8d02a2647ed37584108e63f_21860_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Radius_Setup_hudc4b26cce8d02a2647ed37584108e63f_21860_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Radius_Setup_hudc4b26cce8d02a2647ed37584108e63f_21860_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_Radius_Setup_hudc4b26cce8d02a2647ed37584108e63f_21860_600x0_resize_box_3.PNG" alt="WLC_HQ Radius Setup"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Configure a new WLAN on the WLC with the following requirements:</p>
@@ -1273,47 +1399,241 @@ Login using username &ldquo;admin&rdquo; and password &ldquo;LksNTB2021&rdquo;.<
 </tr>
 </tbody>
 </table>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_11_HRD_SETUP.PNG" alt="WLC_HQ_WLAN_11_HRD_SETUP">
-<img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_11_FLEX.PNG" alt="WLC_HQ_WLAN_11_FLEX">
-<img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_11_AAA.PNG" alt="WLC_HQ_WLAN_11_AA"></p>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_12_SETUP.PNG" alt="WLC_HQ_WLAN_12_MARKETING_SETUP">
-<img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_12_FLEX.PNG" alt="WLC_HQ_WLAN_12_FLEX">
-<img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_12_AAA.PNG" alt="WLC_HQ_WLAN_12_AAA"></p>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SETUP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SETUP_hua11624a743738f6a4f858028c1702ddb_22014_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SETUP_hua11624a743738f6a4f858028c1702ddb_22014_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SETUP_hua11624a743738f6a4f858028c1702ddb_22014_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SETUP_hua11624a743738f6a4f858028c1702ddb_22014_600x0_resize_box_3.PNG" alt="WLC_HQ WLAN 11 HRD SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_FLEX.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_FLEX_hu01197d50fb9a8428c2ab6c02969a4884_29728_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_FLEX_hu01197d50fb9a8428c2ab6c02969a4884_29728_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_FLEX_hu01197d50fb9a8428c2ab6c02969a4884_29728_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_FLEX_hu01197d50fb9a8428c2ab6c02969a4884_29728_600x0_resize_box_3.PNG" alt="WLC_HQ_WLAN 11 FLEX SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_AAA.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_AAA_hue63d9c7a9e439e4de91c190906a560f8_24312_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_AAA_hue63d9c7a9e439e4de91c190906a560f8_24312_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_AAA_hue63d9c7a9e439e4de91c190906a560f8_24312_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_AAA_hue63d9c7a9e439e4de91c190906a560f8_24312_600x0_resize_box_3.PNG" alt="WLC_HQ_WLAN_11 AAA SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SETUP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SETUP_hu7df52f9bb412187cbd8b86691b42884f_19516_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SETUP_hu7df52f9bb412187cbd8b86691b42884f_19516_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SETUP_hu7df52f9bb412187cbd8b86691b42884f_19516_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SETUP_hu7df52f9bb412187cbd8b86691b42884f_19516_600x0_resize_box_3.PNG" alt="WLC_HQ WLAN 12 HRD SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_FLEX.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_FLEX_hu81dc16efbc6ccb1334325d61aabb6007_26186_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_FLEX_hu81dc16efbc6ccb1334325d61aabb6007_26186_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_FLEX_hu81dc16efbc6ccb1334325d61aabb6007_26186_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_FLEX_hu81dc16efbc6ccb1334325d61aabb6007_26186_600x0_resize_box_3.PNG" alt="WLC_HQ WLAN 12 FLEX SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_AAA.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_AAA_hu3b95ff2cb7f478ecf1603394ae377676_23167_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_AAA_hu3b95ff2cb7f478ecf1603394ae377676_23167_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_AAA_hu3b95ff2cb7f478ecf1603394ae377676_23167_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_AAA_hu3b95ff2cb7f478ecf1603394ae377676_23167_600x0_resize_box_3.PNG" alt="WLC_HQ WLAN 12 AAA SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
 </li>
 <li>
 <p>Use WPA2-Enterprise to secure each WLAN.</p>
-<p><img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_11_HRD_SECURITY.PNG" alt="WLC_HQ_WLAN_11_HRD_SECURITY">
-<img src="/images/ITNSA-MODULE-A/WLC_HQ_WLAN_12_SECURITY.PNG" alt="WLC_HQ_WLAN_11_MARKETING_SECURITY"></p>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SECURITY.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SECURITY_hub735c09abba0671d06e97d39d9cdec9e_24038_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SECURITY_hub735c09abba0671d06e97d39d9cdec9e_24038_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SECURITY_hub735c09abba0671d06e97d39d9cdec9e_24038_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_11_HRD_SECURITY_hub735c09abba0671d06e97d39d9cdec9e_24038_600x0_resize_box_3.PNG" alt="WLC_HQ WLAN 11 SECURITY SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SECURITY.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SECURITY_hu7c7fa0080f4140ef6ebe05fc79eec294_20497_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SECURITY_hu7c7fa0080f4140ef6ebe05fc79eec294_20497_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SECURITY_hu7c7fa0080f4140ef6ebe05fc79eec294_20497_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WLC_HQ_WLAN_12_SECURITY_hu7c7fa0080f4140ef6ebe05fc79eec294_20497_600x0_resize_box_3.PNG" alt="WLC_HQ WLAN 12 SECURITY SETUP"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
 </li>
 </ol>
 <h3 id="completed-points-8-1">Completed Points: 8%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-7">Task 7</h2>
 <h3 id="leighweight-access-point-lwap-configuration-at-hq-mataram">LeighWeight Access Point (LWAP) Configuration at HQ MATARAM</h3>
 <ol>
-<li>
-<p>Configure IP addressing dynamically or as a DHCP Client on LWAP_HQ_L1 and LWAP_HQ_L2. <br>
-Double-check the setup to ensure that each LWAP has received dynamic IP addresses from the DHCP Server.</p>
-<p><img src="/images/ITNSA-MODULE-A/LWAP_HQ_L1_DHCP.PNG" alt="LWAP_HQ_L1_DHCP">
-<img src="/images/ITNSA-MODULE-A/LWAP_HQ_L1_DHCP_2.PNG" alt="LWAP_HQ_L1_DHCP_2">
-<img src="/images/ITNSA-MODULE-A/LWAP_HQ_L2_DHCP.PNG" alt="LWAP_HQ_L2_DHCP">
-<img src="/images/ITNSA-MODULE-A/LWAP_HQ_L2_DHCP_2.PNG" alt="LWAP_HQ_L1_DHCP_2"></p>
-</li>
-<li>
-<p>Also, check that the CWAP Status of each LWAP indicates that it has successfully connected to the IP address of the WLC HQ and provides two WLANs, HRD-MANDALIKA and MARKETING-MANDALIKA.</p>
-<p><img src="/images/ITNSA-MODULE-A/LWAP_HQ_L1_CAPWAP.png" alt="LWAP_HQ_L1_CAPWAP">
-<img src="/images/ITNSA-MODULE-A/LWAP_HQ_L2_CAPWAP.png" alt="LWAP_HQ_L2_CAPWAP"></p>
-</li>
+<li>Configure IP addressing dynamically or as a DHCP Client on LWAP_HQ_L1 and LWAP_HQ_L2. <br>
+Double-check the setup to ensure that each LWAP has received dynamic IP addresses from the DHCP Server.</li>
 </ol>
+<p>
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_hu9218d74ae4f3fda06172cf9b4b9dd582_20702_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_hu9218d74ae4f3fda06172cf9b4b9dd582_20702_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_hu9218d74ae4f3fda06172cf9b4b9dd582_20702_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_hu9218d74ae4f3fda06172cf9b4b9dd582_20702_600x0_resize_box_3.PNG" alt="LWAP_HQ_L1 DHCP Success"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_2.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_2_hu05e95d6c2de4c7d98790cf3c010b90bc_17702_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_2_hu05e95d6c2de4c7d98790cf3c010b90bc_17702_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_2_hu05e95d6c2de4c7d98790cf3c010b90bc_17702_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_DHCP_2_hu05e95d6c2de4c7d98790cf3c010b90bc_17702_600x0_resize_box_3.PNG" alt="LWAP_HQ_L1 DHCP 2 Success"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_hu65ab0875b2af7d444361db46f52265db_20788_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_hu65ab0875b2af7d444361db46f52265db_20788_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_hu65ab0875b2af7d444361db46f52265db_20788_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_hu65ab0875b2af7d444361db46f52265db_20788_600x0_resize_box_3.PNG" alt="LWAP_HQ_L2 DHCP Success"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_2.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_2_hua4187aa4b87239a028e839991db46044_16863_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_2_hua4187aa4b87239a028e839991db46044_16863_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_2_hua4187aa4b87239a028e839991db46044_16863_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L2_DHCP_2_hua4187aa4b87239a028e839991db46044_16863_600x0_resize_box_3.PNG" alt="LWAP_HQ_L2 DHCP 2 Success"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+</p>
+<ol start="2">
+<li>Also, check that the CWAP Status of each LWAP indicates that it has successfully connected to the IP address of the WLC HQ and provides two WLANs, HRD-MANDALIKA and MARKETING-MANDALIKA.</li>
+</ol>
+<p>
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP.png">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_320x0_resize_box_3.png 320w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_600x0_resize_box_3.png 600w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_1200x0_resize_box_3.png 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_600x0_resize_box_3.png" alt="LWAP_HQ_L1 CAPWAP Success"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP.png">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_320x0_resize_box_3.png 320w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_600x0_resize_box_3.png 600w,
+          /writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_1200x0_resize_box_3.png 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/LWAP_HQ_L1_CAPWAP_hubcbff31af78ecc0febca2ce602a61095_13608_600x0_resize_box_3.png" alt="LWAP_HQ_L2 CAPWAP Success"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+</p>
 <h3 id="completed-points-0-1">Completed Points: 0%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-8">Task 8</h2>
 <h3 id="end-device-configuration-and-verification-on-hrd-and-marketing-vlans-at-hq-mataram">End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM</h3>
 <ol>
 <li>
-<p>Set the DHCP Client on the Wireless0 interface of each End Device on VLAN HRD and MARKETING, namely Laptop_HRD1, Laptop_HRD2, Laptop_MKT1, and Laptop_MKT2, to get dynamic IP addressing from the DHCP Server. <br></p>
+<p>Set the DHCP Client on the Wireless0 interface of each End Device on VLAN HRD and MARKETING, namely Laptop_HRD1, Laptop_HRD2, Laptop_MKT1, and Laptop_MKT2, to get dynamic IP addressing from the DHCP Server.</p>
 <p>Connect Laptop_HRD1 and Laptop_HRD2 in VLAN HRD to LWAP with SSID &ldquo;HRD-MANDALIKA&rdquo; and Wireless Security Configuration WPA2-Enterprise. <br>
 Use an authentication account as mentioned in the table below:</p>
 <table>
@@ -1337,8 +1657,36 @@ Use an authentication account as mentioned in the table below:</p>
 </tr>
 </tbody>
 </table>
-<p><img src="/images/ITNSA-MODULE-A/LAPTOP_HRD1_DHCP.PNG" alt="LAPTOP_HRD1_DHCP">
-<img src="/images/ITNSA-MODULE-A/LAPTOP_HRD2_DHCP.PNG" alt="LAPTOP_HRD2_DHCP"></p>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD1_DHCP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD1_DHCP_hua4b4698ccc09ee1c12b576b577bda1d2_36027_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD1_DHCP_hua4b4698ccc09ee1c12b576b577bda1d2_36027_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD1_DHCP_hua4b4698ccc09ee1c12b576b577bda1d2_36027_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD1_DHCP_hua4b4698ccc09ee1c12b576b577bda1d2_36027_600x0_resize_box_3.PNG" alt="LAPTOP_HRD1 DHCP Success"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD2_DHCP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD2_DHCP_hub84028e098ed109b4580aa50666f1458_31622_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD2_DHCP_hub84028e098ed109b4580aa50666f1458_31622_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD2_DHCP_hub84028e098ed109b4580aa50666f1458_31622_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_HRD2_DHCP_hub84028e098ed109b4580aa50666f1458_31622_600x0_resize_box_3.PNG" alt="LAPTOP_HRD2 DHCP Success"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
 <p>Connect Laptop_MKT1 and Laptop_MKT2 in VLAN MARKETING to LWAP with SSID &ldquo;MARKETING-MANDALIKA&rdquo; with Wireless Security Configuration WPA2-Enterprise. <br>
 Use an authentication account, as shown in the following table:</p>
 <table>
@@ -1362,57 +1710,211 @@ Use an authentication account, as shown in the following table:</p>
 </tr>
 </tbody>
 </table>
-<p><img src="/images/ITNSA-MODULE-A/LAPTOP_MKT1_DHCP.PNG" alt="LAPTOP_MKT1_DHCP">
-<img src="/images/ITNSA-MODULE-A/LAPTOP_MKT2_DHCP.PNG" alt="LAPTOP_MKT2_DHCP"></p>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT1_DHCP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT1_DHCP_hudc4bbc4fa02ba70d990746ce0f6c38f5_32186_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT1_DHCP_hudc4bbc4fa02ba70d990746ce0f6c38f5_32186_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT1_DHCP_hudc4bbc4fa02ba70d990746ce0f6c38f5_32186_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT1_DHCP_hudc4bbc4fa02ba70d990746ce0f6c38f5_32186_600x0_resize_box_3.PNG" alt="LAPTOP_MKT1 DHCP Success"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT2_DHCP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT2_DHCP_hu5e9d3fc4ef1d3c487b6cba5322b4a4fb_32378_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT2_DHCP_hu5e9d3fc4ef1d3c487b6cba5322b4a4fb_32378_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT2_DHCP_hu5e9d3fc4ef1d3c487b6cba5322b4a4fb_32378_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/LAPTOP_MKT2_DHCP_hu5e9d3fc4ef1d3c487b6cba5322b4a4fb_32378_600x0_resize_box_3.PNG" alt="LAPTOP_MKT2 DHCP Success"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
 </li>
 <li>
 <p>Using a simple PDU, check the connections between each laptop and the other laptop in the HQ MATARAM. <br>
 Check that the connection is working properly.</p>
-<p><img src="/images/ITNSA-MODULE-A/SimplePDU_Laptop_11_12.PNG" alt="SimplePDU_LAPTOP_HRD"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_Laptop_11_12.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_Laptop_11_12_hu6089085726d0ee28bb499dc2feca41c9_10149_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_Laptop_11_12_hu6089085726d0ee28bb499dc2feca41c9_10149_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_Laptop_11_12_hu6089085726d0ee28bb499dc2feca41c9_10149_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_Laptop_11_12_hu6089085726d0ee28bb499dc2feca41c9_10149_600x0_resize_box_3.PNG" alt="SimplePDU from LAPTOP_1 and LAPTOP_2"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Check the Internet connection of Laptop_HRD1 and Laptop_HRD2 in VLAN MARKETING by sending an email to <a href="mailto:external@gmail.com">external@gmail.com</a>.<br>
 The title and email message used for testing can be chosen independently.<br>
 Check that the email is properly sent from Laptop HRD1 and Laptop HRD2.</p>
-<p><img src="/images/ITNSA-MODULE-A/Send_Email_External_Gmail_Laptop_HRD1%262.PNG" alt="Email_Sent_LAPTOP_HRD1&amp;HRD2"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Send_Email_External_Gmail_Laptop_HRD1_2.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Send_Email_External_Gmail_Laptop_HRD1_2_hu04b209c31646e967aa926f188f0299d2_40202_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Send_Email_External_Gmail_Laptop_HRD1_2_hu04b209c31646e967aa926f188f0299d2_40202_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Send_Email_External_Gmail_Laptop_HRD1_2_hu04b209c31646e967aa926f188f0299d2_40202_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Send_Email_External_Gmail_Laptop_HRD1_2_hu04b209c31646e967aa926f188f0299d2_40202_600x0_resize_box_3.PNG" alt="LAPTOP_HRD1 and LAPTOP_HRD2 send email to external@gmail.com"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Verify that the emails sent from Laptop_HRD1 and Laptop_HRD2 were successfully received via PC Client Internet on the Internet subnet.<br>
 Respond to each of these emails.</p>
-<p><img src="/images/ITNSA-MODULE-A/Receive_Email.PNG" alt="Email_Received_PC_Client_Internet"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Receive_Email.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Receive_Email_hu5699c1abca81630f8349a12fc3408c6b_24703_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Receive_Email_hu5699c1abca81630f8349a12fc3408c6b_24703_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Receive_Email_hu5699c1abca81630f8349a12fc3408c6b_24703_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Receive_Email_hu5699c1abca81630f8349a12fc3408c6b_24703_600x0_resize_box_3.PNG" alt="PC Client Internet successful receive email from LAPTOP_1 and LAPTOP_2"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Verify that the email has been downloaded successfully from Laptop_HRD1 and Laptop_HRD2.<br></p>
-<p><img src="/images/ITNSA-MODULE-A/Receive_Reply_Email.PNG" alt="Email_Received_Reply"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Receive_Reply_Email.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Receive_Reply_Email_huf401d8feef4f83a2e343775768c73d12_47457_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Receive_Reply_Email_huf401d8feef4f83a2e343775768c73d12_47457_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Receive_Reply_Email_huf401d8feef4f83a2e343775768c73d12_47457_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Receive_Reply_Email_huf401d8feef4f83a2e343775768c73d12_47457_600x0_resize_box_3.PNG" alt="LAPTOP_HRD1 and LAPTOP_HRD2 successful receive email from PC Client Internet"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
-<p>Verify the Internet connection of Laptop MKT1 and Laptop MKT2 in VLAN MARKETING using a browser by visiting ntbprov.go.id, ditpsmk.net, gmail.com, and universitasbumigora.ac.id.<br>
+<p>Verify the Internet connection of Laptop_MKT1 and Laptop_MKT2 in VLAN MARKETING using a browser by visiting ntbprov.go.id, ditpsmk.net, gmail.com, and universitasbumigora.ac.id.<br>
 Check that the connection is working properly.</p>
-<p><img src="/images/ITNSA-MODULE-A/Verify_Connection_To_GMAIL_And_UnivBumiGora_V1.PNG" alt="Verify_Connection_GMAIL_UNIV">
-<img src="/images/ITNSA-MODULE-A/Verify_Connection_To_NTBPROV_And_DITP_V1.PNG" alt="Vefify_Connection_NTBPROV_DITP"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_V1.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_V1_huefd6b13b83bf0d44815bf53b32c95b8b_30723_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_V1_huefd6b13b83bf0d44815bf53b32c95b8b_30723_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_V1_huefd6b13b83bf0d44815bf53b32c95b8b_30723_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_V1_huefd6b13b83bf0d44815bf53b32c95b8b_30723_600x0_resize_box_3.PNG" alt="LAPTOP_MKT1 and Laptop_MKT2 successful access gmail.com and universitasbumigora.ac.id"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_V1.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_V1_huc08bffc3a8a240e38fda861bde1a2a1b_31187_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_V1_huc08bffc3a8a240e38fda861bde1a2a1b_31187_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_V1_huc08bffc3a8a240e38fda861bde1a2a1b_31187_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_V1_huc08bffc3a8a240e38fda861bde1a2a1b_31187_600x0_resize_box_3.PNG" alt="LAPTOP_MKT1 and Laptop_MKT2 successful access ntbprov.go.id and ditpsmk.net"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 </ol>
 <h3 id="completed-points-0-2">Completed Points: 0%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-9">Task 9</h2>
 <h3 id="branch-sumbawa-server-configuration">BRANCH SUMBAWA Server Configuration</h3>
 <ol>
 <li>
-<p>Set the IP addressing and default gateway and DNS on the BRANCH Server with the following conditions: <br></p>
+<p>Set the IP addressing and default gateway and DNS on the BRANCH Server with the following conditions:</p>
 <ul>
-<li>IP Address: the fourth IP address of subnet 10.0.15.0/29.<br></li>
+<li>IP Address: the fourth IP address of subnet 10.0.15.0/29.</li>
 </ul>
-<p><img src="/images/ITNSA-MODULE-A/IP-Subnet-Server-Branch-Sumbawa.PNG" alt="IP-Server-BRANCH-SUMBAWA"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/IP-Subnet-Server-Branch-Sumbawa.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/IP-Subnet-Server-Branch-Sumbawa_huf1af2bc69905834adefcf339f7cd86bd_27641_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/IP-Subnet-Server-Branch-Sumbawa_huf1af2bc69905834adefcf339f7cd86bd_27641_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/IP-Subnet-Server-Branch-Sumbawa_huf1af2bc69905834adefcf339f7cd86bd_27641_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/IP-Subnet-Server-Branch-Sumbawa_huf1af2bc69905834adefcf339f7cd86bd_27641_600x0_resize_box_3.PNG" alt="IP address at BRANCH SUMBAWA"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 <ul>
-<li>Default Gateway: the first IP address of subnet 10.0.15.0/29.<br></li>
-<li>DNS Server: 192.0.2.1<br></li>
+<li>Default Gateway: the first IP address of subnet 10.0.15.0/29.</li>
+<li>DNS Server: 192.0.2.1</li>
 </ul>
-<p><img src="/images/ITNSA-MODULE-A/Gateway-DNS-HQ-Server-Branch-Sumbawa.PNG" alt="IP-GW-DNS-BRANCH-SUMBAWA"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Server-Branch-Sumbawa.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Server-Branch-Sumbawa_hu0fbc53ac60bfdadffc0c05d30d8253ea_22718_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Server-Branch-Sumbawa_hu0fbc53ac60bfdadffc0c05d30d8253ea_22718_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Server-Branch-Sumbawa_hu0fbc53ac60bfdadffc0c05d30d8253ea_22718_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Gateway-DNS-HQ-Server-Branch-Sumbawa_hu0fbc53ac60bfdadffc0c05d30d8253ea_22718_600x0_resize_box_3.PNG" alt="Default Gateway and DNS at BRANCH SUMBAWA"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
-<p>Enable HTTP and HTTPS services.<br></p>
-<p><img src="/images/ITNSA-MODULE-A/HTTP-HTTPS-Server-Branch-Sumbawa.PNG" alt="HTTP-HTTPS-Server-BRANCH-SUMBAWA"></p>
+<p>Enable HTTP and HTTPS services.</p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-Server-Branch-Sumbawa.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-Server-Branch-Sumbawa_hu1fbe61ff91a1c2ffaf11e1dfd1f90faa_23167_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-Server-Branch-Sumbawa_hu1fbe61ff91a1c2ffaf11e1dfd1f90faa_23167_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-Server-Branch-Sumbawa_hu1fbe61ff91a1c2ffaf11e1dfd1f90faa_23167_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/HTTP-HTTPS-Server-Branch-Sumbawa_hu1fbe61ff91a1c2ffaf11e1dfd1f90faa_23167_600x0_resize_box_3.PNG" alt="Enable HTTP and HTTPS services"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Enable AAA service and configure Network Configuration with Server Radius type and User Setup as given in the table below:</p>
@@ -1477,12 +1979,26 @@ Check that the connection is working properly.</p>
 </tr>
 </tbody>
 </table>
-<p><img src="/images/ITNSA-MODULE-A/AAA-Server-Branch-Sumbawa.PNG" alt="AAA-Server-BRANCH-Mataram"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/AAA-Server-Branch-Sumbawa.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/AAA-Server-Branch-Sumbawa_hue0f32c04665c6418301b41e7022b82cb_40165_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/AAA-Server-Branch-Sumbawa_hue0f32c04665c6418301b41e7022b82cb_40165_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/AAA-Server-Branch-Sumbawa_hue0f32c04665c6418301b41e7022b82cb_40165_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/AAA-Server-Branch-Sumbawa_hue0f32c04665c6418301b41e7022b82cb_40165_600x0_resize_box_3.PNG" alt="Enable AAA services"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 </ol>
 <h3 id="completed-points-10">Completed Points: 10%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-10">Task 10</h2>
 <h3 id="branch-sumbawa-router-configuration">BRANCH SUMBAWA Router Configuration</h3>
 <ol>
@@ -1510,11 +2026,11 @@ Check that the connection is working properly.</p>
 </span></span><span style="display:flex;"><span>%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
 </span></span></code></pre></div><ol start="4">
 <li>
-<p>Create a subinterface on the GigabitEthernet0/0 interface that implements the IEEE 802.1Q encapsulation protocol and configure the router-on-stick for VLAN communication.       <br>
-The following conditions are used to assign IP addresses to each subinterface: <br></p>
+<p>Create a subinterface on the GigabitEthernet0/0 interface that implements the IEEE 802.1Q encapsulation protocol and configure the router-on-stick for VLAN communication.       <br />
+The following conditions are used to assign IP addresses to each subinterface:</p>
 <ul>
-<li>Subinterface GigabitEthernet0/0.1 for VLAN 1 NATIVE with the first IP address of the subnet address 10.0.15.0/29. <br></li>
-<li>Subinterface GigabitEthernet0/0.2 for VLAN 2 SALES with the first IP address of the subnet address 10.0.15.16/28. <br></li>
+<li>Subinterface GigabitEthernet0/0.1 for VLAN 1 NATIVE with the first IP address of the subnet address 10.0.15.0/29.</li>
+<li>Subinterface GigabitEthernet0/0.2 for VLAN 2 SALES with the first IP address of the subnet address 10.0.15.16/28.</li>
 </ul>
 </li>
 </ol>
@@ -1545,8 +2061,8 @@ The following conditions are used to assign IP addresses to each subinterface: <
 </ul>
 <p>TCP/IP parameters are set:</p>
 <ul>
-<li>The pool includes the default gateway, which uses the subnet&rsquo;s initial IP address, 10.0.15.16/28.<br></li>
-<li>DNS server at 192.0.2.1. <br></li>
+<li>The pool includes the default gateway, which uses the subnet&rsquo;s initial IP address, 10.0.15.16/28.</li>
+<li>DNS server at 192.0.2.1.</li>
 <li>Set the first IP address of subnet 10.0.15.16/28 to not be leased to DHCP Client.</li>
 </ul>
 </li>
@@ -1605,7 +2121,7 @@ The following conditions are used to assign IP addresses to each subinterface: <
 </span></span><span style="display:flex;"><span>% Generating 1024 bit RSA keys, keys will be non-exportable...[OK]
 </span></span><span style="display:flex;"><span>%SSH-5-ENABLED: SSH 2 has been enabled
 </span></span></code></pre></div><ol start="15">
-<li>Create a local authentication account on the BRANCH router with username “admin” and password “LksNTB2021”.<br>
+<li>Create a local authentication account on the BRANCH router with username “admin” and password “LksNTB2021”.
 This account is a backup when authentication to the Radius server has problems.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>BRANCH(config)#username admin privilege 15 secret LksNTB2021
@@ -1634,16 +2150,16 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span></code></pre></div><ol start="19">
 <li>Set the BRANCH router to only accept remote access via SSH with a maximum number of sessions for 5 (five) users simultaneously and using the authentication list “SERVER-AAA”.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>BRANCH(config)#line vty 0 4
-</span></span><span style="display:flex;"><span>BRANCH(config-line)#login authentication SERVER-AAA
+<p>BRANCH(config)#line vty 0 4</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>BRANCH(config-line)#login authentication SERVER-AAA
 </span></span><span style="display:flex;"><span>BRANCH(config-line)#session-limit 5
 </span></span></code></pre></div><ol start="20">
-<li>Set the console access to the router also to use the authentication list “SERVER-AAA” AUTHENTICATION LIST. <br></li>
+<li>Set the console access to the router also to use the authentication list “SERVER-AAA” AUTHENTICATION LIST.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>BRANCH(config)#line con 0
 </span></span><span style="display:flex;"><span>BRANCH(config-line)#login authentication SERVER-AAA
 </span></span></code></pre></div><ol start="21">
-<li>Verify the configuration that has been done to ensure that it is by the requirements. <br></li>
+<li>Verify the configuration that has been done to ensure that it is by the requirements.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>BRANCH#sh run
 </span></span><span style="display:flex;"><span>Building configuration...
@@ -1763,7 +2279,7 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>BRANCH#
 </span></span></code></pre></div><h3 id="completed-points-11">Completed Points: 11%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-11">Task 11</h2>
 <h3 id="sw_branch-switch-configuration-at-branch-sumbawa">SW_BRANCH Switch Configuration at BRANCH SUMBAWA</h3>
 <ol>
@@ -1810,13 +2326,13 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>SW_BRANCH(config-if-range)#authentication port-control auto
 </span></span><span style="display:flex;"><span>SW_BRANCH(config-if-range)#dot1x pae authenticator
 </span></span></code></pre></div><ol start="8">
-<li>Enable trunk port mode for the GigabitEthernet0/2 interface attached to the BRANCH SUMBAWA router. <br></li>
+<li>Enable trunk port mode for the GigabitEthernet0/2 interface attached to the BRANCH SUMBAWA router.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_BRANCH(config)#int g0/2
 </span></span><span style="display:flex;"><span>SW_BRANCH(config-if)#switchport mode trunk 
 </span></span><span style="display:flex;"><span>SW_BRANCH(config-if)#description BRANCH SUMBAWA
 </span></span></code></pre></div><ol start="9">
-<li>Verify the configuration that has been done to ensure that it is following the requirements. <br></li>
+<li>Verify the configuration that has been done to ensure that it is following the requirements.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>SW_BRANCH#
 </span></span><span style="display:flex;"><span>%SYS-5-CONFIG_I: Configured from console by console
@@ -1853,52 +2369,6 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>authentication port-control auto
 </span></span><span style="display:flex;"><span>dot1x pae authenticator
 </span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/3
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/4
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/5
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/6
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/7
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/8
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/9
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/10
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/11
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/12
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/13
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/14
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/15
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/16
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/17
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/18
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/19
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/20
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/21
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/22
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/23
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface FastEthernet0/24
-</span></span><span style="display:flex;"><span>!
-</span></span><span style="display:flex;"><span>interface GigabitEthernet0/1
-</span></span><span style="display:flex;"><span>!
 </span></span><span style="display:flex;"><span>interface GigabitEthernet0/2
 </span></span><span style="display:flex;"><span>description BRANCH SUMBAWA
 </span></span><span style="display:flex;"><span>switchport mode trunk
@@ -1921,7 +2391,7 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span style="display:flex;"><span>SW_BRANCH#
 </span></span></code></pre></div><h3 id="completed-points-3-1">Completed Points: 3%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-12">Task 12</h2>
 <h3 id="dhcp-client-configuration-and-internet-connection-verification-on-vlan-2-sales-pc-at-branch-sumbawa">DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA</h3>
 <ol>
@@ -1951,54 +2421,178 @@ This account is a backup when authentication to the Radius server has problems.<
 </li>
 <li>
 <p>Verify that each PC on each VLAN has received a dynamic IP address from the DHCP Server.</p>
-<p><img src="/images/ITNSA-MODULE-A/PC_Sales1_DHCP_802.1X.PNG" alt="PC_Sales1">
-<img src="/images/ITNSA-MODULE-A/PC_Sales2_DHCP_802.1X.PNG" alt="PC_Sales2"></p>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/PC_Sales1_DHCP_802.1X.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/PC_Sales1_DHCP_802.1X_hue6adb3eb52e30a2f27ec330e4ee0dc27_24683_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Sales1_DHCP_802.1X_hue6adb3eb52e30a2f27ec330e4ee0dc27_24683_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Sales1_DHCP_802.1X_hue6adb3eb52e30a2f27ec330e4ee0dc27_24683_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/PC_Sales1_DHCP_802.1X_hue6adb3eb52e30a2f27ec330e4ee0dc27_24683_600x0_resize_box_3.PNG" alt="DHCP PC_Sales1 using 802.1X Auth"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/PC_Sales2_DHCP_802.1X.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/PC_Sales2_DHCP_802.1X_hufc5cfa2fee8a3596b0ea39d1483bf54e_24177_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Sales2_DHCP_802.1X_hufc5cfa2fee8a3596b0ea39d1483bf54e_24177_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/PC_Sales2_DHCP_802.1X_hufc5cfa2fee8a3596b0ea39d1483bf54e_24177_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/PC_Sales2_DHCP_802.1X_hufc5cfa2fee8a3596b0ea39d1483bf54e_24177_600x0_resize_box_3.PNG" alt="DHCP PC_Sales2 using 802.1X Auth"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
 </li>
 <li>
 <p>Using Simple PDU, verify the connection between PC SALES1 and PC SALES2 as well as the BRANCH SUMBAWA router.<br>
 Check that the connection is working properly.</p>
-<p><img src="/images/ITNSA-MODULE-A/SimplePDU_Client_To_Router_Success.PNG" alt="SIMPLEPDU"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_Client_To_Router_Success.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_Client_To_Router_Success_hu70ca6b9080f68e5c3cea8754f93e18bd_9737_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_Client_To_Router_Success_hu70ca6b9080f68e5c3cea8754f93e18bd_9737_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/SimplePDU_Client_To_Router_Success_hu70ca6b9080f68e5c3cea8754f93e18bd_9737_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_Client_To_Router_Success_hu70ca6b9080f68e5c3cea8754f93e18bd_9737_600x0_resize_box_3.PNG" alt="Simple PDU from Client to Router"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 <li>
 <p>Use a browser to test the Internet connection of each PC in VLAN 2 SALES by visiting ntbprov.go.id, ditpsmk.net, gmail.com, and universitasbumigora.ac.id.<br>
 Check that the connection is working properly.</p>
-<p><img src="/images/ITNSA-MODULE-A/Verify_Connection_To_NTBPROV_And_DITP.PNG" alt="VerifyConnection1">
-<img src="/images/ITNSA-MODULE-A/Verify_Connection_To_GMAIL_And_UnivBumiGora.PNG" alt="VerifyConnection2"></p>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_hu586346299d1543dd64893441757aa834_34812_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_hu586346299d1543dd64893441757aa834_34812_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_hu586346299d1543dd64893441757aa834_34812_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_NTBPROV_And_DITP_hu586346299d1543dd64893441757aa834_34812_600x0_resize_box_3.PNG" alt="Client access to ntbprov.go.id and ditpsmk.net is success"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_hu67038dba1e9264ab23ec9df220ddf642_27767_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_hu67038dba1e9264ab23ec9df220ddf642_27767_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_hu67038dba1e9264ab23ec9df220ddf642_27767_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Verify_Connection_To_GMAIL_And_UnivBumiGora_hu67038dba1e9264ab23ec9df220ddf642_27767_600x0_resize_box_3.PNG" alt="Client access to gmail.com and universitasbumigora.ac.id is success"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
 </li>
 <li>
 <p>After completing the NAT configuration on the HQ MATARAM router, access to the HQ Server can be verified by visiting &ldquo;mandalika.id&rdquo;<brs>
 Check that the connection is working properly.</p>
-<p><img src="/images/ITNSA-MODULE-A/Access_PC_SALES_TO_mandalika.PNG" alt="ACCESS_BRANCH_MANDALIKA"></p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/Access_PC_SALES_TO_mandalika.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/Access_PC_SALES_TO_mandalika_hub108393accaf8d8fc0d92f783b05167b_20585_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/Access_PC_SALES_TO_mandalika_hub108393accaf8d8fc0d92f783b05167b_20585_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/Access_PC_SALES_TO_mandalika_hub108393accaf8d8fc0d92f783b05167b_20585_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/Access_PC_SALES_TO_mandalika_hub108393accaf8d8fc0d92f783b05167b_20585_600x0_resize_box_3.PNG" alt="Client access to mandalika.id is success"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
 </ol>
 <h3 id="completed-points-0-3">Completed Points: 0%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-13">Task 13</h2>
 <h3 id="wrt_branch-wireless-router-configuration-at-branch-sumbawa">WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA</h3>
 <ol>
 <li>
-<p>In Internet Setup, configure the IP addressing statically or manually using the following conditions: <br></p>
+<p>In Internet Setup, configure the IP addressing statically or manually using the following conditions:</p>
 <ul>
 <li>Use the third IP address from subnet 10.0.15.0/29.</li>
 <li>The default gateway uses the first IP address of subnet 10.0.15.0/29.</li>
 <li>The DNS server is using 192.0.2.1.</li>
 </ul>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Internet_Setup.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Internet_Setup_huf480381e909b1d5ac1520c0531544ae4_27211_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Internet_Setup_huf480381e909b1d5ac1520c0531544ae4_27211_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Internet_Setup_huf480381e909b1d5ac1520c0531544ae4_27211_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Internet_Setup_huf480381e909b1d5ac1520c0531544ae4_27211_600x0_resize_box_3.PNG" alt="WRT Internet Setup"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
 </li>
-</ol>
-<p><img src="/images/ITNSA-MODULE-A/WRT_BRANCH_Internet_Setup.PNG" alt="InternetSetup"></p>
-<ol start="2">
-<li>In Network Setup, configure the IP addressing statically or manually to the first IP address in subnet 10.0.15.128/25.</li>
-</ol>
-<p><img src="/images/ITNSA-MODULE-A/WRT_BRANCH_Network_Setup.PNG" alt="NetworkSetup"></p>
-<ol start="3">
-<li>Enable the DHCP Server feature and assign dynamically distributed IP addresses to DHCP Clients beginning with the first IP address in subnet 10.0.15.128/25 for a maximum of 100 users.<br>
-The DNS Server option is set to 192.0.2.1.</li>
-</ol>
-<p><img src="/images/ITNSA-MODULE-A/WRT_BRANCH_DHCP_SETUP.PNG" alt="DHCPSetup"></p>
-<ol start="4">
 <li>
-<p>Configure the Wireless feature with the following conditions:<br></p>
+<p>In Network Setup, configure the IP addressing statically or manually to the first IP address in subnet 10.0.15.128/25.</p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Network_Setup.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Network_Setup_hub66f1f00ea7545c4bd7b1cfd92f546ae_4565_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Network_Setup_hub66f1f00ea7545c4bd7b1cfd92f546ae_4565_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Network_Setup_hub66f1f00ea7545c4bd7b1cfd92f546ae_4565_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Network_Setup_hub66f1f00ea7545c4bd7b1cfd92f546ae_4565_600x0_resize_box_3.PNG" alt="WRT Network Setup"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+</li>
+<li>
+<p>Enable the DHCP Server feature and assign dynamically distributed IP addresses to DHCP Clients beginning with the first IP address in subnet 10.0.15.128/25 for a maximum of 100 users.<br>
+The DNS Server option is set to 192.0.2.1.</p>
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_DHCP_SETUP.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_DHCP_SETUP_huc1a614222b9cfaf83e2b3c7d6965ab43_14819_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_DHCP_SETUP_huc1a614222b9cfaf83e2b3c7d6965ab43_14819_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_DHCP_SETUP_huc1a614222b9cfaf83e2b3c7d6965ab43_14819_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_DHCP_SETUP_huc1a614222b9cfaf83e2b3c7d6965ab43_14819_600x0_resize_box_3.PNG" alt="WRT DHCP Setup"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+</li>
+<li>
+<p>Configure the Wireless feature with the following conditions:</p>
 <ul>
 <li>Network mode &ldquo;Wireless-G Only&rdquo;</li>
 <li>Wireless network identifier name or SSID &ldquo;ENGINEER-MANDALIKA&rdquo;</li>
@@ -2007,17 +2601,45 @@ The DNS Server option is set to 192.0.2.1.</li>
 <li>WPA2 Enterprise security mode with AES encryption</li>
 <li>Radius Server uses the fourth IP address from subnet 10.0.15.0/29 with the shared secret &ldquo;SMKBisa2021&rdquo;.</li>
 </ul>
+<p>
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Wireless_Setup.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Wireless_Setup_hu409403dcd752d682126063a6b830d560_18736_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Wireless_Setup_hu409403dcd752d682126063a6b830d560_18736_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Wireless_Setup_hu409403dcd752d682126063a6b830d560_18736_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WRT_BRANCH_Wireless_Setup_hu409403dcd752d682126063a6b830d560_18736_600x0_resize_box_3.PNG" alt="WRT Wireless Setup"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+
+
+    
+    
+      <figure>
+        <a href="/writeup-itnsa-2021-network-actual-future-network/WRT_Branch_Wireless_Security.PNG">
+          <img
+            srcset="
+              /writeup-itnsa-2021-network-actual-future-network/WRT_Branch_Wireless_Security_hud529f533e6b66c3b0cf1e4cb0859051e_17266_320x0_resize_box_3.PNG 320w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_Branch_Wireless_Security_hud529f533e6b66c3b0cf1e4cb0859051e_17266_600x0_resize_box_3.PNG 600w,
+              /writeup-itnsa-2021-network-actual-future-network/WRT_Branch_Wireless_Security_hud529f533e6b66c3b0cf1e4cb0859051e_17266_1200x0_resize_box_3.PNG 2x"
+            src="/writeup-itnsa-2021-network-actual-future-network/WRT_Branch_Wireless_Security_hud529f533e6b66c3b0cf1e4cb0859051e_17266_600x0_resize_box_3.PNG" alt="WRT Security Setup"/>
+        </a>
+        <figcaption><p style="text-align: center;"></p></figcaption>
+      </figure>
+</p>
 </li>
 </ol>
-<p><img src="/images/ITNSA-MODULE-A/WRT_BRANCH_Wireless_Setup.PNG" alt="WirelessSetup"></p>
-<p><img src="/images/ITNSA-MODULE-A/WRT_Branch_Wireless_Security.PNG" alt="WirelessSecurity"></p>
 <h3 id="completed-points-4">Completed Points: 4%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-14">Task 14</h2>
 <h3 id="end-device-configuration-and-verification-at-wlan-engineer-branch-sumbawa">End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA</h3>
 <ol>
-<li>Set the DHCP Client on the Wireless0 interface of each End Device on the WLAN ENGINEER subnet, namely Tablet_ENGINEER1 and Tablet_ENGINEER2, to get dynamic IP addressing from the DHCP Server.  <br></li>
+<li>Set the DHCP Client on the Wireless0 interface of each End Device on the WLAN ENGINEER subnet, namely Tablet_ENGINEER1 and Tablet_ENGINEER2, to get dynamic IP addressing from the DHCP Server.</li>
 </ol>
 <p>Connect each Tablet on the ENGINEER WLAN subnet to the Wireless Access Point (AP) with the SSID &ldquo;ENGINEER-MANDALIKA&rdquo; and the Wireless Security Configuration WPA2-Enterprise.<br>
 Use an authentication account as mentioned in the table below:</p>
@@ -2042,16 +2664,44 @@ Use an authentication account as mentioned in the table below:</p>
 </tr>
 </tbody>
 </table>
-<p><img src="/images/ITNSA-MODULE-A/Tablet_Engineer1.PNG" alt="Tablet_ENGINEER1">
-<img src="/images/ITNSA-MODULE-A/Tablet_Engineer2.PNG" alt="Tablet_ENGINEER2"></p>
+<p>
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer1.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer1_hu2e3adf4f8f965a9378307620a1125725_37324_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer1_hu2e3adf4f8f965a9378307620a1125725_37324_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer1_hu2e3adf4f8f965a9378307620a1125725_37324_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer1_hu2e3adf4f8f965a9378307620a1125725_37324_600x0_resize_box_3.PNG" alt="Tablet_Engineer1 Setup"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer2.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer2_hu830eb2d153c938629534a6cb2cb0a71c_35614_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer2_hu830eb2d153c938629534a6cb2cb0a71c_35614_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer2_hu830eb2d153c938629534a6cb2cb0a71c_35614_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/Tablet_Engineer2_hu830eb2d153c938629534a6cb2cb0a71c_35614_600x0_resize_box_3.PNG" alt="Tablet_Engineer2 Setup"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+</p>
 <h3 id="completed-points-2">Completed Points: 2%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-15">Task 15</h2>
 <h3 id="vpn-configuration-on-an-hq-mataram-router-utilizing-gre-over-ipsec-and-ospf">VPN Configuration on an HQ MATARAM Router utilizing GRE over IPSec and OSPF</h3>
 <ol>
 <li>
-<p>Create an Extended Named ACL with the name &ldquo;INTERESTING-TRAFFIC&rdquo; for:<br></p>
+<p>Create an Extended Named ACL with the name &ldquo;INTERESTING-TRAFFIC&rdquo; for:</p>
 <ul>
 <li>Allow GRE traffic from source IP address 192.0.2.18 to destination IP address 192.0.2.26.</li>
 <li>Identify IP traffic from HQ MATARAM Server, 10.0.14.2, to VLAN 2 SALES on BRANCH SUMBAWA router with subnet address 10.0.15.0/29 to the IP address as interesting traffic.</li>
@@ -2066,7 +2716,7 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span style="display:flex;"><span>HQ(config-ext-nacl)#permit tcp 10.0.11.0 0.0.0.255 host 10.0.15.4
 </span></span><span style="display:flex;"><span>HQ(config-ext-nacl)#permit tcp 10.0.12.0 0.0.0.255 host 10.0.15.4
 </span></span></code></pre></div><ol start="2">
-<li>Configure IKE Phase 1 ISAKMP policy with priority 46 and IKE Phase 2 IPSec policy with sequence 46 on the HQ MATARAM router using the conditions shown in table A &amp; B below: <br></li>
+<li>Configure IKE Phase 1 ISAKMP policy with priority 46 and IKE Phase 2 IPSec policy with sequence 46 on the HQ MATARAM router using the conditions shown in table A &amp; B below:</li>
 </ol>
 <p style="text-align: center;"> Table A. Parameter ISAKMP Phase  1 Policy</p>
 <table>
@@ -2165,7 +2815,7 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span style="display:flex;"><span>*Jan  3 07:16:26.785: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is ON
 </span></span></code></pre></div><ol start="4">
 <li>
-<p>Configure a GRE Tunnel over IPSec with the following parameters: <br></p>
+<p>Configure a GRE Tunnel over IPSec with the following parameters:</p>
 <ul>
 <li>Use the first IP address of the subnet 10.0.14.4/30 to set the IP address of the tunnel interface 46.</li>
 <li>Configure interface Serial0/0/0 as the source and IP address 192.0.2.26 as the destination for tunnel interface 46&rsquo;s endpoint.</li>
@@ -2365,11 +3015,11 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span style="display:flex;"><span>HQ#
 </span></span></code></pre></div><h3 id="completed-points-8-2">Completed Points: 8%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-16">Task 16</h2>
 <h3 id="vpn-configuration-on-an-branch-sumbawa-router-utilizing-gre-over-ipsec-and-ospf">VPN Configuration on an BRANCH SUMBAWA Router utilizing GRE over IPSec and OSPF</h3>
 <ol>
-<li>Create an Extended Named ACL with the name &ldquo;INTERESTING-TRAFFIC&rdquo; for: <br>
+<li>Create an Extended Named ACL with the name &ldquo;INTERESTING-TRAFFIC&rdquo; for:
 <ul>
 <li>Allow GRE traffic from source IP address 192.0.2.26 to destination IP address 192.0.2.18.</li>
 <li>Identify as interesting traffic IP traffic from VLAN 2 SALES on the BRANCH SUMBAWA router with subnet address 10.0.15.0/29 to the IP address of the HQ MATARAM Server, which is 10.0.14.2.</li>
@@ -2384,7 +3034,7 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span style="display:flex;"><span>BRANCH(config-ext-nacl)#permit ip 10.0.11.0 0.0.0.255 host 10.0.15.4
 </span></span><span style="display:flex;"><span>BRANCH(config-ext-nacl)#permit ip 10.0.12.0 0.0.0.255 host 10.0.15.4
 </span></span></code></pre></div><ol start="2">
-<li>Configure IKE Phase 1 ISAKMP policy with priority 46 and IKE Phase 2 IPSec policy with sequence 46 on the BRANCH SUMBAWA router using the conditions shown in table A &amp; B below:  <br></li>
+<li>Configure IKE Phase 1 ISAKMP policy with priority 46 and IKE Phase 2 IPSec policy with sequence 46 on the BRANCH SUMBAWA router using the conditions shown in table A &amp; B below:</li>
 </ol>
 <p style="text-align: center;"> Table A. Parameter ISAKMP Phase 1 Policy</p>
 <table>
@@ -2483,7 +3133,7 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span style="display:flex;"><span>*Jan  3 07:16:26.785: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is ON
 </span></span></code></pre></div><ol start="5">
 <li>
-<p>Configure a GRE Tunnel over IPSec with the following parameters: <br></p>
+<p>Configure a GRE Tunnel over IPSec with the following parameters:</p>
 <ul>
 <li>Use the second IP address of the subnet 10.0.14.4/30 to set the IP address of the tunnel interface 46.</li>
 <li>Configure interface Serial0/0/1 as the source and IP address 192.0.2.26 as the destination for tunnel interface 46’s endpoint..</li>
@@ -2659,49 +3309,133 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>BRANCH#
 </span></span></code></pre></div><h3 id="completed-points-8-3">Completed Points: 8%</h3>
-<hr>
+<hr />
 <h2 id="task-17">Task 17</h2>
 <h3 id="vpn-connection-verification-from-the-end-device-at-hq-mataram">VPN Connection Verification from the End Device at HQ MATARAM</h3>
 <ol>
 <li>Use Simple PDU to verify the connection between the End Device on VLAN SALES and WLAN ENGINEER at BRANCH SUMBAWA and the End Device on VLAN HRD and MARKETING at HQ MATARAM. <br>
 Check that the connection is working properly.</li>
 </ol>
-<p><img src="/images/ITNSA-MODULE-A/SimplePDU_HQMATARAM_SWBRANCH_END_DEVICE.PNG" alt="SIMPLE-PDU-HQ-MATARAM-SW-BRANCH"></p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_HQMATARAM_SWBRANCH_END_DEVICE.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/SimplePDU_HQMATARAM_SWBRANCH_END_DEVICE_huc5d2e3d9a9443110f873a7c9752a2f25_7990_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/SimplePDU_HQMATARAM_SWBRANCH_END_DEVICE_huc5d2e3d9a9443110f873a7c9752a2f25_7990_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/SimplePDU_HQMATARAM_SWBRANCH_END_DEVICE_huc5d2e3d9a9443110f873a7c9752a2f25_7990_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_HQMATARAM_SWBRANCH_END_DEVICE_huc5d2e3d9a9443110f873a7c9752a2f25_7990_600x0_resize_box_3.PNG" alt="SimplePDU from VLAN SALES and WLAN ENGINEER to VLAN HRD And MARKETING"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
 <ol start="2">
 <li>Use a browser to verify access to HTTP and HTTPS services on the HQ MATARAM Server by entering the addresses http://10.0.14.2 and https://10.0.14.2 from the End Device on VLAN SALES and WLAN ENGINEER from BRANCH SUMBAWA.<br>
 Check that HTTP and HTTPS services can be accessed.</li>
 </ol>
-<p><img src="/images/ITNSA-MODULE-A/Access_BRANCH_SERVER_HTTP_HTTPS_FROM_VLAN_11%2612.PNG" alt="BRANCH-SERVER-HTTP-HTTPS-VLAN11&amp;12"></p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_HTTP_HTTPS_FROM_VLAN_11_12.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_HTTP_HTTPS_FROM_VLAN_11_12_huee3e09efbd897f15dde333c5ef729005_29767_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_HTTP_HTTPS_FROM_VLAN_11_12_huee3e09efbd897f15dde333c5ef729005_29767_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_HTTP_HTTPS_FROM_VLAN_11_12_huee3e09efbd897f15dde333c5ef729005_29767_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_HTTP_HTTPS_FROM_VLAN_11_12_huee3e09efbd897f15dde333c5ef729005_29767_600x0_resize_box_3.PNG" alt="HTTP and HTTPS Access from VLAN SALES and WLAN ENGINEER"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
 <ol start="3">
 <li>Access the FTP service on the BRANCH Server using the FTP Client by entering the address 10.0.15.4 from the End Device on the HRD and MARKETING VLAN of HQ MATARAM.<br>
 For FTP authentication, the user is &ldquo;lks&rdquo; and the password is &ldquo;ntb.&quot;<br>
 Check that the FTP service can be accessed.</li>
 </ol>
-<p><img src="/images/ITNSA-MODULE-A/Access_BRANCH_SERVER_FTP_FROM_VLAN_11%2612.PNG" alt="BRANCH-SERVER-FTP-VLAN11&amp;12"></p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_FTP_FROM_VLAN_11_12.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_FTP_FROM_VLAN_11_12_huafbbfb484d32e3c315017e62f532aca4_59026_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_FTP_FROM_VLAN_11_12_huafbbfb484d32e3c315017e62f532aca4_59026_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_FTP_FROM_VLAN_11_12_huafbbfb484d32e3c315017e62f532aca4_59026_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/Access_BRANCH_SERVER_FTP_FROM_VLAN_11_12_huafbbfb484d32e3c315017e62f532aca4_59026_600x0_resize_box_3.PNG" alt="FTP Access to BRANCH Server from VLAN HRD and MARKETING"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
 <h3 id="completed-points-0-4">Completed Points: 0%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-18">Task 18</h2>
 <h3 id="vpn-connection-verification-from-the-end-device-at-branch-sumbawa">VPN Connection Verification from the End Device at BRANCH SUMBAWA</h3>
 <ol>
 <li>Verification the connection using Simple PDU from the End Device located on VLAN SALES and WLAN ENGINEER from BRANCH SUMBAWA to the End Device located on VLAN HRD and MARKETING at HQ MATARAM. <br>
 Make sure the connection is successful.</li>
 </ol>
-<p><img src="/images/ITNSA-MODULE-A/SimplePDU_SWBRANCH_HQMATARAM_END_DEVICE.PNG" alt="SIMPLE-PDU-SW-BRANCH-HQ-MATARAM"></p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_SWBRANCH_HQMATARAM_END_DEVICE.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/SimplePDU_SWBRANCH_HQMATARAM_END_DEVICE_huc3fe2d7a4c67b29eb49f55fcb49b5fab_10844_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/SimplePDU_SWBRANCH_HQMATARAM_END_DEVICE_huc3fe2d7a4c67b29eb49f55fcb49b5fab_10844_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/SimplePDU_SWBRANCH_HQMATARAM_END_DEVICE_huc3fe2d7a4c67b29eb49f55fcb49b5fab_10844_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/SimplePDU_SWBRANCH_HQMATARAM_END_DEVICE_huc3fe2d7a4c67b29eb49f55fcb49b5fab_10844_600x0_resize_box_3.PNG" alt="Simple PDU from VLAN SALES and WLAN ENGINEER to VLAN HRD and MARKETING"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
 <ol start="2">
 <li>Verification of access to HTTP and HTTPS services located at SERVER HQ MATARAM using a browser by accessing the addresses http://10.0.14.2 and https://10.0.14.2 from the End Device located on VLAN SALES and WLAN ENGINEER from BRANCH SUMBAWA. <br>
 Make sure HTTP and HTTPS services can be accessed.</li>
 </ol>
-<p><img src="/images/ITNSA-MODULE-A/Access_HQ_SERVER_HTTP_HTTPS_FROM_VLANSALES%26ENGINEER.PNG" alt="HQ-MATARAM-HTTP-HTTPS-VLANSALES&amp;ENGINEER"></p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_HTTP_HTTPS_FROM_VLANSALES_ENGINEER.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_HTTP_HTTPS_FROM_VLANSALES_ENGINEER_hu38391ce33390708a031b2fb2b81830ab_30338_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_HTTP_HTTPS_FROM_VLANSALES_ENGINEER_hu38391ce33390708a031b2fb2b81830ab_30338_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_HTTP_HTTPS_FROM_VLANSALES_ENGINEER_hu38391ce33390708a031b2fb2b81830ab_30338_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_HTTP_HTTPS_FROM_VLANSALES_ENGINEER_hu38391ce33390708a031b2fb2b81830ab_30338_600x0_resize_box_3.PNG" alt="HTTP and HTTPs Access to HQ MATARAM Server from VLAN SALES and WLAN ENGINEER"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
 <ol start="3">
 <li>Access the FTP service on the HQ Server using the FTP Client by entering the address 10.0.14.2 from the End Device on the SALES VLAN and WLAN ENGINEER of BRANCH SUMBAWA. <br>
 The user for FTP authentication is &ldquo;lks&rdquo; with password &ldquo;ntb&rdquo;. <br>
 Make sure the FTP service can be accessed.</li>
 </ol>
-<p><img src="/images/ITNSA-MODULE-A/Access_HQ_SERVER_FTP_FROM_VLANSALES%26ENGINEER.PNG" alt="HQ-MATARAM-FTP-VLANSALES&amp;ENGINEER"></p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_FTP_FROM_VLANSALES_ENGINEER.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_FTP_FROM_VLANSALES_ENGINEER_hu2cb71fcff8f1cab0c4c46ebc753a7bbb_49835_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_FTP_FROM_VLANSALES_ENGINEER_hu2cb71fcff8f1cab0c4c46ebc753a7bbb_49835_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_FTP_FROM_VLANSALES_ENGINEER_hu2cb71fcff8f1cab0c4c46ebc753a7bbb_49835_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/Access_HQ_SERVER_FTP_FROM_VLANSALES_ENGINEER_hu2cb71fcff8f1cab0c4c46ebc753a7bbb_49835_600x0_resize_box_3.PNG" alt="FTP Access to HQ Server from VLAN SALES and WLAN ENGINEER"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
 <h3 id="completed-points-0-5">Completed Points: 0%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-19">Task 19</h2>
 <h3 id="roled-based-access-control-rbac-configuration-at-router-hq-mataram">Roled Based Access Control (RBAC) configuration at router HQ MATARAM</h3>
 <ol>
@@ -2726,7 +3460,7 @@ Make sure the FTP service can be accessed.</li>
 </span></span><span style="display:flex;"><span>commands exec include traceroute
 </span></span></code></pre></div><h3 id="completed-points-1">Completed Points: 1%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="task-20">Task 20</h2>
 <h3 id="roled-based-access-control-rbac-configuration-at-router-branch-sumbawa">Roled Based Access Control (RBAC) configuration at router BRANCH SUMBAWA</h3>
 <ol>
@@ -2757,9 +3491,23 @@ Make sure the FTP service can be accessed.</li>
 </span></span><span style="display:flex;"><span>commands exec include traceroute
 </span></span></code></pre></div><h3 id="completed-points-1-1">Completed Points: 1%</h3>
 <p><a href="#top">Back to top</a></p>
-<hr>
+<hr />
 <h2 id="complete-configuration">Complete Configuration</h2>
-<p><img src="/images/ITNSA-MODULE-A/FINISH.PNG" alt="Completion"></p>
+
+
+
+  <figure>
+    <a href="/writeup-itnsa-2021-network-actual-future-network/FINISH.PNG">
+      <img
+        srcset="
+          /writeup-itnsa-2021-network-actual-future-network/FINISH_huce9e7e5fafe18ae774c684f6b900b8e4_4573_320x0_resize_box_3.PNG 320w,
+          /writeup-itnsa-2021-network-actual-future-network/FINISH_huce9e7e5fafe18ae774c684f6b900b8e4_4573_600x0_resize_box_3.PNG 600w,
+          /writeup-itnsa-2021-network-actual-future-network/FINISH_huce9e7e5fafe18ae774c684f6b900b8e4_4573_1200x0_resize_box_3.PNG 2x"
+        src="/writeup-itnsa-2021-network-actual-future-network/FINISH_huce9e7e5fafe18ae774c684f6b900b8e4_4573_600x0_resize_box_3.PNG" alt="TASK FINISHED!"/>
+    </a>
+    <figcaption><p style="text-align: center;"></p></figcaption>
+  </figure>
+
 <h3 id="router-hq-mataram">Router HQ MATARAM</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-HTML" data-lang="HTML"><span style="display:flex;"><span>HQ#show run
 </span></span><span style="display:flex;"><span>Building configuration...
@@ -3200,32 +3948,6 @@ Thank you very much.</p>
 
 </content>
 <p style="text-align: center;">
-  
-  <a href="https://zxcnxc.github.io/blog/cisco/">#Cisco</a>
-  
-  <a href="https://zxcnxc.github.io/blog/itnsa/">#ITNSA</a>
-  
-  <a href="https://zxcnxc.github.io/blog/packet-tracer/">#Packet Tracer</a>
-  
-  <a href="https://zxcnxc.github.io/blog/gre-over-ipsec/">#GRE OVER IPSEC</a>
-  
-  <a href="https://zxcnxc.github.io/blog/ospf/">#OSPF</a>
-  
-  <a href="https://zxcnxc.github.io/blog/dhcp/">#DHCP</a>
-  
-  <a href="https://zxcnxc.github.io/blog/nat/">#NAT</a>
-  
-  <a href="https://zxcnxc.github.io/blog/ntp/">#NTP</a>
-  
-  <a href="https://zxcnxc.github.io/blog/rbac/">#RBAC</a>
-  
-  <a href="https://zxcnxc.github.io/blog/wlc/">#WLC</a>
-  
-  <a href="https://zxcnxc.github.io/blog/lwap/">#LWAP</a>
-  
-  <a href="https://zxcnxc.github.io/blog/intervlan/">#InterVLAN</a>
-  
-  <a href="https://zxcnxc.github.io/blog/radius/">#RADIUS</a>
   
 </p>
 

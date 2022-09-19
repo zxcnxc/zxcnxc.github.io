@@ -9,12 +9,14 @@
     <copyright>Copyright © 2022, All.</copyright>
     <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zxcnxc.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Writeup ITNSA 2021 - Packet Tracer Troubleshooting</title>
-      <link>https://zxcnxc.github.io/writeup-itnsa-2021-packet-tracer-troubleshooting/</link>
+      <title>Writeup ITNSA 2021 - Packet Tracer Troubleshoot</title>
+      <link>https://zxcnxc.github.io/writeup-itnsa-2021-packet-tracer-troubleshoot/</link>
       <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://zxcnxc.github.io/writeup-itnsa-2021-packet-tracer-troubleshooting/</guid>
-      <description>Table Of Contents Introduction Troubleshooting 1 (Point: 25) Questions Answers Troubleshooting 2 (Point: 25) Questions Answers Troubleshooting 3 (Point: 25) Questions Answers Troubleshooting 4 (Point: 25) Questions Answers Summary Introduction Hi, we meet again, this time we will try questions from the ITNSA section of Cisco Packet Tracer Troubleshooting, unlike the last question, we only try troubleshooting on the network that is already available. Let&amp;rsquo;s try, like usual, this question is done using Cisco Packet Tracer For those interested in trying it can be downloaded from this link ITNSA</description>
+      <guid>https://zxcnxc.github.io/writeup-itnsa-2021-packet-tracer-troubleshoot/</guid>
+      <description>Table Of Contents Introduction Troubleshooting 1 (Point: 25) Questions Answers Troubleshooting 2 (Point: 25) Questions Answers Troubleshooting 3 (Point: 25) Questions Answers Troubleshooting 4 (Point: 25) Questions Answers Summary Introduction ITNSA Let&amp;rsquo;s try it out. as usual, this question is answered with Cisco Packet Tracer Those who want to try it can get it from this ITNSA
+Topology ITNSA Module B
+Troubleshooting 1 (Point: 25) Questions All hosts on LAN BRANCH1 could not communicate to LAN BRANCH2 and vice versa.</description>
     </item>
     
     <item>
