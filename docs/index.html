@@ -85,6 +85,10 @@
     margin-right: 10px;
   }
 
+  figcaption {
+    font-size: 16px;
+  }
+
   textarea {
     width: 100%;
     font-size: 16px;
@@ -120,8 +124,8 @@
     color: #ddd;
     display: block;
     padding: 20px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    white-space: wrap;
+    overflow: auto;
     font-size: 14px;
   }
 
@@ -131,8 +135,8 @@
   }
 
   div.highlight code {
-    background-color: unset;
-    color: unset;
+    background-color: #272822;
+    color: rgb(255, 255, 255);
   }
 
   blockquote {
@@ -177,6 +181,90 @@
   ul.blog-posts li a:visited {
     color: #8b6fcb;
   }
+
+  .highlight-wrapper {
+  display: block;
+}
+
+ 
+.highlight-wrapper .lntd pre {
+    padding: 0;
+}
+
+.chroma .lntd pre {
+    border: 0px solid #ccc;
+}
+
+.chroma .lntd:first-child {
+  padding: 7px 7px 7px 10px;
+  margin: 0;
+}
+
+.chroma .lntd:last-child {
+  padding: 7px 10px 7px 7px;
+  margin: 0;
+}
+ 
+
+.highlight {
+  position: relative;
+  z-index: 0;
+  padding: 0;
+  border-radius: 4px;
+  margin:-15px -1px 10px -1px;
+
+}
+
+.highlight > .chroma {
+  position: static;
+  z-index: 1;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 10px;
+}
+
+.copy-code-button {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: -29px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  width: 65px;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1.25px solid #232326;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  white-space: nowrap;
+  padding: 3px 5px 5px 5px;
+  margin: 38px 10px 0 1px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus,
+.copy-code-button:active,
+.copy-code-button:active:hover {
+  color: #222225;
+  background-color: #b3b3b3;
+  opacity: 0.8;
+}
+
+.copyable-text-area {
+  position: absolute;
+  height: 0;
+  z-index: -1;
+  opacity: .01;
+}
+
 
   @media (prefers-color-scheme: dark) {
     body {
@@ -227,7 +315,8 @@
   }
 
 </style>
-<link rel="canonical" href="https://zxcnxc.github.io/" />
+<link rel="canonical" href="https://zxcnxc.github.io" />
+
   
   
 </head>
@@ -256,7 +345,7 @@
           /home_hu68ebfe12ef5ad3c6fe6009830c7fb070_137224_320x0_resize_q75_h2_box_2.webp 320w,
           /home_hu68ebfe12ef5ad3c6fe6009830c7fb070_137224_600x0_resize_q75_h2_box_2.webp 600w,
           /home_hu68ebfe12ef5ad3c6fe6009830c7fb070_137224_1200x0_resize_q75_h2_box_2.webp 2x"
-        src="/home_hu68ebfe12ef5ad3c6fe6009830c7fb070_137224_600x0_resize_q75_h2_box_2.webp" alt="God&#39;s in his heaven— / All&#39;s right with the world!"/>
+        src="/home_hu68ebfe12ef5ad3c6fe6009830c7fb070_137224_600x0_resize_q75_h2_box_2.webp"   alt="Popuko is crying because the world is already messed up." loading="lazy"  />
     </a>
     <figcaption><p style="text-align: center;"></p></figcaption>
   </figure>
@@ -265,6 +354,7 @@
 
   </main>
   <footer>Made with a "small" customized and some love from <a href="https://github.com/janraasch/hugo-bearblog/"> Hugo ʕ•ᴥ•ʔ Bear</a>
+<script src="/js/copy-code-button.js"></script>
 </footer>
 
     

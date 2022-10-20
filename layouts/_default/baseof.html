@@ -11,9 +11,9 @@
   <meta name="robots" content="index, follow, archive">
   {{ end }}
 
-  {{- partial "favicon.html" . -}}
-  <title>{{- block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{- end }}</title>
 
+  {{- partial "favicon.html" . -}}
+  <title>{{- if .IsHome -}}Home | {{ .Site.Title }}{{- else if .Params.hide_site_title -}}{{ .Page.Title }}{{- else if .Page.Title -}}{{ .Page.Title }} | {{ .Site.Title }}{{- else -}}{{ .Site.Title }}{{- end -}}</title> 
   {{- partial "seo_tags.html" . -}}
   <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -22,7 +22,13 @@
   {{ end -}}
 
   {{- partial "style.html" . -}}
+
+  {{- if isset .Params "canonical" -}}
+  <link rel="canonical" href="{{ .Params.canonical }}" />
+  {{- else -}}
   <link rel="canonical" href="{{ .Permalink }}" />
+  {{- end }}
+
   
   <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into
@@ -38,6 +44,7 @@
     {{- block "main" . }}{{- end }}
   </main>
   <footer>
+    
     {{- partial "footer.html" . -}}
   </footer>
 
