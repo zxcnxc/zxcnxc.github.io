@@ -1,22 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://zxcnxc.github.io/blog/</loc>
-    <lastmod>2022-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zxcnxc.github.io/</loc>
-    <lastmod>2022-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-packet-tracer-troubleshoot/</loc>
-    <lastmod>2022-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-network-actual-future-network/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zxcnxc.github.io/ensp-vs-wsl-2/</loc>
-    <lastmod>2021-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zxcnxc.github.io/about/</loc>
-  </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://zxcnxc.github.io/</loc>
+  <lastmod>2022-10-20T16:24:04+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://zxcnxc.github.io/blog/</loc>
+  <lastmod>2022-10-20T16:24:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zxcnxc.github.io/about/</loc>
+  <lastmod>2022-10-20T16:24:04+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-packet-tracer-troubleshoot/</loc>
+  <lastmod>2022-10-20T16:24:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-network-actual-future-network/</loc>
+  <lastmod>2022-10-20T16:24:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://zxcnxc.github.io/ensp-vs-wsl-2/</loc>
+  <lastmod>2022-10-20T16:24:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
