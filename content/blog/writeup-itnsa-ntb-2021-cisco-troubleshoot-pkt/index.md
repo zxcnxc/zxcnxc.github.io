@@ -50,17 +50,15 @@ Those who want to try it can get it from this [ITNSA](https://drive.google.com/f
 ---
 
 ## Troubleshooting 1 (Point: 25)
-### Questions
-
+Questions: 
 Both hosts on LAN BRANCH1 and LAN BRANCH2 were unable to communicate with one another.<br>
 However, each BRANCH's Internet connection to the Internet was successful. 
 
-### Answers
-
+Answers:
 There is a typo in the ospf section of the network section 192.168.0.2/30 in BRANCH1.<br>
 There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2. 
 
-#### BRANCH1
+BRANCH1
 
 Configuration :
 
@@ -95,8 +93,7 @@ router ospf 1
  network 192.168.0.0 0.0.0.3 area 0
 ```
 
-#### BRANCH2
-
+BRANCH2
 
 Configuration : 
 ```HTML
@@ -145,10 +142,10 @@ OSPF
 ---
 
 ## Troubleshooting 2 (Point: 25)
-### Questions
+Questions:
 The HQ, BRANCH1 and BRANCH2 routers were unable to synchronize their clocks with the Internet's Network Time Protocol (NTP) server. 
 
-### Answers
+Answers:
 So I checked the configuration in ROOT DNS + NTP Server in the "Services > NTP" section and found that the password is "cisco" while HQ, BRANCH1 and BRANCH2 use "c1sc0," indicating that there is an error in the password section. 
 
 ---
@@ -158,7 +155,7 @@ NTP Server Password
 
 ---
 
-#### ROUTER HQ
+ROUTER HQ
 
 Configuration : 
 
@@ -198,7 +195,7 @@ ntp trusted-key 1
 ntp server 203.0.113.1 key 1
 ```
 
-#### BRANCH1
+BRANCH1
 
 Configuration :
 
@@ -239,7 +236,7 @@ ntp trusted-key 1
 ntp server 203.0.113.1 key 1
 ```
 
-#### BRANCH2
+BRANCH2
 
 Configuration :
 
@@ -281,14 +278,14 @@ ntp server 203.0.113.1 key 1
 ---
 
 ## Troubleshooting 3 (Point: 25)
-### Questions
+Questions:
 The network administrator has configured a Radius-based authentication system for Router HQ on the HQ Server.<br>
 However, Network administrators can only access Router HQ through console and SSH access using local user accounts.
 
-### Answers
+Answers:
 There was a typo in the HQ router side configuration, and the RADIUS service was not enabled in the ServerHQ section.
 
-#### ROUTER HQ
+ROUTER HQ
 
 Configuration : 
 
@@ -317,7 +314,6 @@ radius server 192.168.1.253
  address ipv4 192.168.1.253 auth-port 1645
 ```
 
-
 After :
 
 ```HTML
@@ -330,7 +326,7 @@ radius server 192.168.1.254
 
 ---
 
-#### SERVERHQ
+SERVERHQ
 
 Before :
 
@@ -347,15 +343,14 @@ Login Success :
 ---
 
 ## Troubleshooting 4 (Point: 25)
-### Questions
+Questions:
 All hosts on LAN HQ, BRANCH1 and BRANCH2 of PT. AR, as well as Internet Client PCs on the Internet subnet, are unable to access the ntbprov.go.id site, but can access other sites. 
 
-### Answers
-
+Answers:
 Assign port Ethernet0/1 to VLAN 3.<br>
 In object-network server-dmz, change the interface in out. 
 
-#### ASA-NTBPROV
+ASA-NTBPROV
 
 Configuration :
 

@@ -3,11 +3,21 @@ title = "About"
 description = "Hello, I'm a random guy who enjoys IT, especially obscure technologies, cheese, and weeaboo stuff."
 +++
 
-```HTML
-Hi! I’m ZXCNXC / All
-Email: enhjbnhjQHByb3Rvbm1haWwuY29t | BASE64
-Discord: zxcnxc#7737 
-```
+
+![alt text](/images/placeholder.jpg)
+
+
+Hi! I’m ZXCNXC / All <br>
+I work as a Fiber Optic Technician a.k.a FOT, my job is to configure network devices for remote monitoring of SCADA services and power plant PLCs. 
+
+I created this blog just for personal documentation about Security, Networking and other things I am interested in.<br>
+PSA: Don't hate me if the first thing you see is an anime picture or incorrect grammar and bad formatting of the post, I'm still trying to learn to fix for those things and I'm a weeb.
+
+You can contact me through : <br>
+Email: enhjbnhjQHByb3Rvbm1haWwuY29t <br>
+Discord: zxcnxc#7737 <br>
+Twitter: zxcnxc
+
 
 <!-- 
 ......                                                       ..  .             .   ..  ......         .                                 ....... .!PBG!:.. ....   ..               .......  :?G#P7 .:  ::75GBBB57:..... ......                             

@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2022, All.</copyright>
-    <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zxcnxc.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zxcnxc.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Writeup LKSN ITNSA NTB 2021 - Linux Actual</title>
+      <link>https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-linux-actual/</link>
+      <pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-linux-actual/</guid>
+      <description>Table Of Contents Introduction TASK 1 CONFIGURATION ON DEBIAN 10 SERVER (server1) TASK 2 CONFIGURATION ON DEBIAN 10 SERVER (server254) Summary REWRITE Bagian IP Configuration | Menambahkan gateway di sisi server254 Hostname menggunakan /etc/resolve Introduction Hello, I&amp;rsquo;m back in the final writeup of the third of three questions titled &amp;ldquo;Linux Actual,&amp;rdquo; which is part of ITNSA&amp;rsquo;s NTB LKSN competition in 2021.
+We are now asked to configure servers and clients using Linux Debian 10.</description>
+    </item>
+    
     <item>
       <title>Writeup LKSN ITNSA NTB 2021 - Packet Tracer Troubleshoot</title>
       <link>https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-packet-tracer-troubleshoot/</link>

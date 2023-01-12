@@ -1,6 +1,6 @@
 +++
 title = "Home"
-description = "When a miserable weeb meets a Network, Servers, and Privacy."
+description = "When a miserable weeb meet a Network, Servers, and Security."
 canonical = "https://zxcnxc.github.io"
 +++
 

@@ -63,8 +63,7 @@ For those interested, the questions can be downloaded via this [ITNSA](https://d
 
 ---
 
-## Task 1
-### HQ MATARAM Server Configuration
+## Task 1: HQ MATARAM Server Configuration
 
 1. Set the IP addressing and default gateway and DNS on the HQ Server with the following conditions: 
    
@@ -101,14 +100,13 @@ For those interested, the questions can be downloaded via this [ITNSA](https://d
 
     {{< bundle-image name="AAA-HQ-Mataram.PNG" alt="Enable AAA service">}}
 
-### Completed Points: 8%
+Completed Points: 8%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 2
-### HQ MATARAM Router Configuration
+## Task 2: HQ MATARAM Router Configuration
 
 1. Set the router's hostname with the name "HQ". 
 
@@ -492,14 +490,13 @@ HQ#
 
 ```
 
-### Completed Points:  19%
+Completed Points:  19%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 3
-### SW_HQ_L1 Switch Configuration at HQ MATARAM
+## Task 3: SW_HQ_L1 Switch Configuration at HQ MATARAM
 
 1. Set the hostname of the Switch with the name "SW_HQ_L1".
 
@@ -650,14 +647,13 @@ end
 SW_HQ_L1#
 
 ```
-### Completed Points: 5%
+Completed Points: 5%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 4
-### SW_HQ_L2 Switch Configuration at HQ MATARAM
+## Task 4: SW_HQ_L2 Switch Configuration at HQ MATARAM
 
 1. Set the hostname of the Switch with the name “SW_HQ_L2”.
 
@@ -760,14 +756,13 @@ end
 SW_HQ_L2#
 
 ```
-### Completed Points: 3%
+Completed Points: 3%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 5
-### Admin2 PC Configuration and Verification at HQ MATARAM
+## Task 5: Admin2 PC Configuration and Verification at HQ MATARAM
 
 1. Set up the DHCP Client on the Admin2 PC at the MATARAM head office. <br>
 Ensure the PC successfully obtains dynamic IP addressing from the DHCP Server.  
@@ -779,14 +774,13 @@ Make sure the connection is successful.
 
     {{< bundle-image name="SimplePDU_PC_Admin2_Switch_And_RouterHQ.PNG" alt="SimplePDU connection to SW and RouterHQ Successful">}}
 
-### Completed Points: 0%
+Completed Points: 0%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 6
-### Wireless Controller (WLC) Configuration at HQ MATARAM
+## Task 6: WLC Configuration at HQ MATARAM
 
 1. Perform the initial setup on the WLC HQ using the browser from the PC Admin1 desktop by entering the WLC's IP address, which is http://192.168.1.1. <br>
 Create a new administrator account with the username "admin" and the password "LksNTB2021." 
@@ -851,15 +845,13 @@ Login using username "admin" and password "LksNTB2021".
     {{< bundle-image name="WLC_HQ_WLAN_11_HRD_SECURITY.PNG" alt="WLC_HQ WLAN 11 SECURITY SETUP">}}
     {{< bundle-image name="WLC_HQ_WLAN_12_SECURITY.PNG" alt="WLC_HQ WLAN 12 SECURITY SETUP">}}
 
-
-### Completed Points: 8%
+Completed Points: 8%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 7
-### LeighWeight Access Point (LWAP) Configuration at HQ MATARAM
+## Task 7: LWAP Configuration at HQ MATARAM
 
 1. Configure IP addressing dynamically or as a DHCP Client on LWAP_HQ_L1 and LWAP_HQ_L2. <br>
 Double-check the setup to ensure that each LWAP has received dynamic IP addresses from the DHCP Server. 
@@ -874,14 +866,13 @@ Double-check the setup to ensure that each LWAP has received dynamic IP addresse
 {{< bundle-image name="LWAP_HQ_L1_CAPWAP.PNG" alt="LWAP_HQ_L1 CAPWAP Success">}}
 {{< bundle-image name="LWAP_HQ_L1_CAPWAP.PNG" alt="LWAP_HQ_L2 CAPWAP Success">}}
 
-### Completed Points: 0%
+Completed Points: 0%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 8
-### End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM
+## Task 8: End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM
 
 1. Set the DHCP Client on the Wireless0 interface of each End Device on VLAN HRD and MARKETING, namely Laptop_HRD1, Laptop_HRD2, Laptop_MKT1, and Laptop_MKT2, to get dynamic IP addressing from the DHCP Server. 
 
@@ -935,14 +926,13 @@ Check that the connection is working properly.
     
     {{< bundle-image name="Verify_Connection_To_NTBPROV_And_DITP_V1.PNG" alt="LAPTOP_MKT1 and Laptop_MKT2 successful access ntbprov.go.id and ditpsmk.net">}}    
 
-### Completed Points: 0%
+Completed Points: 0%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 9
-### BRANCH SUMBAWA Server Configuration
+## Task 9: BRANCH SUMBAWA Server Configuration
 1. Set the IP addressing and default gateway and DNS on the BRANCH Server with the following conditions:
     
     * IP Address: the fourth IP address of subnet 10.0.15.0/29.
@@ -979,14 +969,13 @@ Check that the connection is working properly.
 
     {{< bundle-image name="AAA-Server-Branch-Sumbawa.PNG" alt="Enable AAA services">}}
 
-### Completed Points: 10%
+Completed Points: 10%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 10
-### BRANCH SUMBAWA Router Configuration
+## Task 10: BRANCH SUMBAWA Router Configuration
 
 1. Set the router’s hostname with the name “BRANCH”.
 
@@ -1297,14 +1286,13 @@ end
 BRANCH#
 ```
 
-### Completed Points: 11% 
+Completed Points: 11% 
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 11
-### SW_BRANCH Switch Configuration at BRANCH SUMBAWA
+## Task 11: SW_BRANCH Switch Configuration at BRANCH SUMBAWA
 
 1. Set the hostname of the Switch with the name “SW_BRANCH”.
 
@@ -1431,14 +1419,13 @@ end
 SW_BRANCH#
 ```
 
-### Completed Points: 3%
+Completed Points: 3%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 12
-### DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA
+## Task 12: DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA
 
 1. Configure each PC in VLAN 2 SALES Sumbawa BRANCH as a DHCP client and enable 802.1x security features with authentication accounts, as shown in the table below: 
 
@@ -1468,14 +1455,13 @@ Check that the connection is working properly.
     
     {{< bundle-image name="Access_PC_SALES_TO_mandalika.PNG" alt="Client access to mandalika.id is success">}}
 
-### Completed Points: 0%
+ Completed Points: 0%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 13
-### WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA
+## Task 13: WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA
 
 1. In Internet Setup, configure the IP addressing statically or manually using the following conditions:
 
@@ -1507,15 +1493,13 @@ The DNS Server option is set to 192.0.2.1.
     {{< bundle-image name="WRT_BRANCH_Wireless_Setup.PNG" alt="WRT Wireless Setup">}}
     {{< bundle-image name="WRT_BRANCH_Wireless_Security.PNG" alt="WRT Security Setup">}}
 
-
-### Completed Points: 4%
+Completed Points: 4%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 14
-### End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA  
+## Task 14: End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA  
 
 1. Set the DHCP Client on the Wireless0 interface of each End Device on the WLAN ENGINEER subnet, namely Tablet_ENGINEER1 and Tablet_ENGINEER2, to get dynamic IP addressing from the DHCP Server.
 
@@ -1530,15 +1514,13 @@ The DNS Server option is set to 192.0.2.1.
 {{< bundle-image name="Tablet_Engineer1.PNG" alt="Tablet_Engineer1 Setup">}}
 {{< bundle-image name="Tablet_Engineer2.PNG" alt="Tablet_Engineer2 Setup">}}
 
-
-### Completed Points: 2%
+ Completed Points: 2%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 15
-### VPN Configuration on an HQ MATARAM Router utilizing GRE over IPSec and OSPF
+## Task 15: VPN configuration on an HQ MATARAM router using GRE over IPSec and OSPF
 
 1. Create an Extended Named ACL with the name "INTERESTING-TRAFFIC" for:
 
@@ -1809,15 +1791,13 @@ end
 
 HQ#
 ```        
-
-### Completed Points: 8%
+Completed Points: 8%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 16
-### VPN Configuration on an BRANCH SUMBAWA Router utilizing GRE over IPSec and OSPF
+## Task 16: VPN configuration on a BRANCH SUMBAWA router using GRE over IPSec and OSPF
 
 1. Create an Extended Named ACL with the name "INTERESTING-TRAFFIC" for: 
 
@@ -2045,8 +2025,8 @@ RADIUS server 10.0.15.4
 address ipv4 10.0.15.4 auth-port 1645
 key NTBJawara2021
 !
-line con 0
 login authentication SERVER-AAA
+line con 0
 !
 line aux 0
 !
@@ -2065,12 +2045,11 @@ BRANCH#
 
 ```
 
-### Completed Points: 8%
+Completed Points: 8%
 
 ---
 
-## Task 17
-### VPN Connection Verification from the End Device at HQ MATARAM  
+## Task 17: Verification of VPN Connection from End Device at HQ MATARAM  
 
 1. Use Simple PDU to verify the connection between the End Device on VLAN SALES and WLAN ENGINEER at BRANCH SUMBAWA and the End Device on VLAN HRD and MARKETING at HQ MATARAM. <br>
 Check that the connection is working properly.
@@ -2088,15 +2067,13 @@ Check that the FTP service can be accessed.
 
 {{< bundle-image name="Access_BRANCH_SERVER_FTP_FROM_VLAN_11_12.PNG" alt="FTP Access to BRANCH Server from VLAN HRD and MARKETING">}}
 
-
-### Completed Points: 0%
+Completed Points: 0%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 18
-### VPN Connection Verification from the End Device at BRANCH SUMBAWA 
+## Task 18: Verification of VPN Connection from End Device at BRANCH SUMBAWA 
 
 1. Verification the connection using Simple PDU from the End Device located on VLAN SALES and WLAN ENGINEER from BRANCH SUMBAWA to the End Device located on VLAN HRD and MARKETING at HQ MATARAM. <br>
 Make sure the connection is successful. 
@@ -2114,14 +2091,13 @@ Make sure the FTP service can be accessed.
 
 {{< bundle-image name="Access_HQ_SERVER_FTP_FROM_VLANSALES_ENGINEER.PNG" alt="FTP Access to HQ Server from VLAN SALES and WLAN ENGINEER">}}
 
-### Completed Points: 0%
+Completed Points: 0%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 19
-### Roled Based Access Control (RBAC) configuration at router HQ MATARAM
+## Task 19: RBAC Configuration at router HQ MATARAM
 
 1. Create a view called "support" and set its password to "mandalika".
 
@@ -2149,14 +2125,13 @@ commands exec include all show
 commands exec include traceroute
 ```
 
-### Completed Points: 1%
+Completed Points: 1%
 
 <a href="#">Back to top</a>
 
 ---
 
-## Task 20 
-### Roled Based Access Control (RBAC) configuration at router BRANCH SUMBAWA 
+## Task 20: RBAC Configuration at router BRANCH SUMBAWA 
 
 1. Create a view called "helpdesk" and set its password to "mandalika".
    
@@ -2190,7 +2165,7 @@ commands exec include show ip route
 commands exec include traceroute
 ```    
 
-### Completed Points: 1%
+Completed Points: 1%
 
 <a href="#">Back to top</a>
 
@@ -2200,7 +2175,7 @@ commands exec include traceroute
 
 {{< bundle-image name="FINISH.PNG" alt="TASK FINISHED!">}}
 
-### Router HQ MATARAM
+Router HQ MATARAM
 
 ```HTML
 HQ#show run
@@ -2384,7 +2359,7 @@ end
 HQ#
 ```
 
-### Router BRANCH SUMBAWA
+Router BRANCH SUMBAWA
 
 ```HTML
 BRANCH#sh run
