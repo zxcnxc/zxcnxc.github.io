@@ -36,7 +36,7 @@
 <meta itemprop="name" content="Writeup LKSN ITNSA NTB 2021 - Packet Tracer Troubleshoot">
 <meta itemprop="description" content="Using Cisco Packet Tracer to troubleshoot an existing network."><meta itemprop="datePublished" content="2022-09-09T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-09-09T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1230"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
+<meta itemprop="wordCount" content="1222"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
 <meta itemprop="keywords" content="CISCO,ITNSA,LKSN,Writeup,Packet Tracer,DHCP,RADIUS,NTP,OSPF,GRE OVER IPSEC,IPSEC,ASA FIREWALL,Troubleshoot," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -50,7 +50,6 @@
     background-color: #333;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.7;
     color: #ddd;
     font-size: 16px;
     font-size: 120%;
@@ -153,6 +152,7 @@
     padding-left: auto;
     padding: 20px;
     text-align: center;
+    font-size: 16px;
   }
 
   .helptext {
@@ -353,30 +353,10 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#troubleshooting-1-point-25">Troubleshooting 1 (Point: 25)</a>
-      <ul>
-        <li><a href="#questions">Questions</a></li>
-        <li><a href="#answers">Answers</a></li>
-      </ul>
-    </li>
-    <li><a href="#troubleshooting-2-point-25">Troubleshooting 2 (Point: 25)</a>
-      <ul>
-        <li><a href="#questions-1">Questions</a></li>
-        <li><a href="#answers-1">Answers</a></li>
-      </ul>
-    </li>
-    <li><a href="#troubleshooting-3-point-25">Troubleshooting 3 (Point: 25)</a>
-      <ul>
-        <li><a href="#questions-2">Questions</a></li>
-        <li><a href="#answers-2">Answers</a></li>
-      </ul>
-    </li>
-    <li><a href="#troubleshooting-4-point-25">Troubleshooting 4 (Point: 25)</a>
-      <ul>
-        <li><a href="#questions-3">Questions</a></li>
-        <li><a href="#answers-3">Answers</a></li>
-      </ul>
-    </li>
+    <li><a href="#troubleshooting-1-point-25">Troubleshooting 1 (Point: 25)</a></li>
+    <li><a href="#troubleshooting-2-point-25">Troubleshooting 2 (Point: 25)</a></li>
+    <li><a href="#troubleshooting-3-point-25">Troubleshooting 3 (Point: 25)</a></li>
+    <li><a href="#troubleshooting-4-point-25">Troubleshooting 4 (Point: 25)</a></li>
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -413,13 +393,13 @@
 
 <hr />
 <h2 id="troubleshooting-1-point-25">Troubleshooting 1 (Point: 25)</h2>
-<h3 id="questions">Questions</h3>
-<p>Both hosts on LAN BRANCH1 and LAN BRANCH2 were unable to communicate with one another.<br>
+<p>Questions:
+Both hosts on LAN BRANCH1 and LAN BRANCH2 were unable to communicate with one another.<br>
 However, each BRANCH&rsquo;s Internet connection to the Internet was successful.</p>
-<h3 id="answers">Answers</h3>
-<p>There is a typo in the ospf section of the network section 192.168.0.2/30 in BRANCH1.<br>
+<p>Answers:
+There is a typo in the ospf section of the network section 192.168.0.2/30 in BRANCH1.<br>
 There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2.</p>
-<h4 id="branch1">BRANCH1</h4>
+<p>BRANCH1</p>
 <p>Configuration :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">BRANCH1#conf t
 </span></span><span class="line"><span class="cl">Enter configuration commands, one per line.  End with CNTL/Z.
@@ -441,7 +421,7 @@ There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2
 </span></span><span class="line"><span class="cl"> log-adjacency-changes
 </span></span><span class="line"><span class="cl"> network 192.168.2.0 0.0.0.255 area 0
 </span></span><span class="line"><span class="cl"> network 192.168.0.0 0.0.0.3 area 0
-</span></span></code></pre></div><h4 id="branch2">BRANCH2</h4>
+</span></span></code></pre></div><p>BRANCH2</p>
 <p>Configuration :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">BRANCH2#conf t
 </span></span><span class="line"><span class="cl">Enter configuration commands, one per line.  End with CNTL/Z.
@@ -539,10 +519,10 @@ There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2
 
 <hr />
 <h2 id="troubleshooting-2-point-25">Troubleshooting 2 (Point: 25)</h2>
-<h3 id="questions-1">Questions</h3>
-<p>The HQ, BRANCH1 and BRANCH2 routers were unable to synchronize their clocks with the Internet&rsquo;s Network Time Protocol (NTP) server.</p>
-<h3 id="answers-1">Answers</h3>
-<p>So I checked the configuration in ROOT DNS + NTP Server in the &ldquo;Services &gt; NTP&rdquo; section and found that the password is &ldquo;cisco&rdquo; while HQ, BRANCH1 and BRANCH2 use &ldquo;c1sc0,&rdquo; indicating that there is an error in the password section.</p>
+<p>Questions:
+The HQ, BRANCH1 and BRANCH2 routers were unable to synchronize their clocks with the Internet&rsquo;s Network Time Protocol (NTP) server.</p>
+<p>Answers:
+So I checked the configuration in ROOT DNS + NTP Server in the &ldquo;Services &gt; NTP&rdquo; section and found that the password is &ldquo;cisco&rdquo; while HQ, BRANCH1 and BRANCH2 use &ldquo;c1sc0,&rdquo; indicating that there is an error in the password section.</p>
 <hr />
 <p>NTP Server Password</p>
 
@@ -561,7 +541,7 @@ There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2
   </figure>
 
 <hr />
-<h4 id="router-hq">ROUTER HQ</h4>
+<p>ROUTER HQ</p>
 <p>Configuration :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">HQ#conf t
 </span></span><span class="line"><span class="cl">Enter configuration commands, one per line.  End with CNTL/Z.
@@ -588,7 +568,7 @@ There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2
 </span></span><span class="line"><span class="cl">ntp authentication-key 1 md5 0822455D0A16 7
 </span></span><span class="line"><span class="cl">ntp trusted-key 1
 </span></span><span class="line"><span class="cl">ntp server 203.0.113.1 key 1
-</span></span></code></pre></div><h4 id="branch1-1">BRANCH1</h4>
+</span></span></code></pre></div><p>BRANCH1</p>
 <p>Configuration :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">BRANCH1#en
 </span></span><span class="line"><span class="cl">BRANCH1#conf t
@@ -616,7 +596,7 @@ There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2
 </span></span><span class="line"><span class="cl">ntp authentication-key 1 md5 0822455D0A16 7
 </span></span><span class="line"><span class="cl">ntp trusted-key 1
 </span></span><span class="line"><span class="cl">ntp server 203.0.113.1 key 1
-</span></span></code></pre></div><h4 id="branch2-1">BRANCH2</h4>
+</span></span></code></pre></div><p>BRANCH2</p>
 <p>Configuration :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">BRANCH2#en
 </span></span><span class="line"><span class="cl">BRANCH2#conf t
@@ -645,12 +625,12 @@ There is a missing ospf section in the network section 192.168.3.0/24 in BRANCH2
 </span></span><span class="line"><span class="cl">ntp server 203.0.113.1 key 1
 </span></span></code></pre></div><hr />
 <h2 id="troubleshooting-3-point-25">Troubleshooting 3 (Point: 25)</h2>
-<h3 id="questions-2">Questions</h3>
-<p>The network administrator has configured a Radius-based authentication system for Router HQ on the HQ Server.<br>
+<p>Questions:
+The network administrator has configured a Radius-based authentication system for Router HQ on the HQ Server.<br>
 However, Network administrators can only access Router HQ through console and SSH access using local user accounts.</p>
-<h3 id="answers-2">Answers</h3>
-<p>There was a typo in the HQ router side configuration, and the RADIUS service was not enabled in the ServerHQ section.</p>
-<h4 id="router-hq-1">ROUTER HQ</h4>
+<p>Answers:
+There was a typo in the HQ router side configuration, and the RADIUS service was not enabled in the ServerHQ section.</p>
+<p>ROUTER HQ</p>
 <p>Configuration :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">/// First, we need to delete old configuration
 </span></span><span class="line"><span class="cl">HQ(config)#no radius-server host 192.168.1.253 auth-port 1645
@@ -677,7 +657,7 @@ However, Network administrators can only access Router HQ through console and SS
 </span></span><span class="line"><span class="cl"> address ipv4 192.168.1.254 auth-port 1645
 </span></span><span class="line"><span class="cl"> key Pa55w0rd
 </span></span></code></pre></div><hr />
-<h4 id="serverhq">SERVERHQ</h4>
+<p>SERVERHQ</p>
 <p>Before :</p>
 
 
@@ -728,12 +708,12 @@ However, Network administrators can only access Router HQ through console and SS
 
 <hr />
 <h2 id="troubleshooting-4-point-25">Troubleshooting 4 (Point: 25)</h2>
-<h3 id="questions-3">Questions</h3>
-<p>All hosts on LAN HQ, BRANCH1 and BRANCH2 of PT. AR, as well as Internet Client PCs on the Internet subnet, are unable to access the ntbprov.go.id site, but can access other sites.</p>
-<h3 id="answers-3">Answers</h3>
-<p>Assign port Ethernet0/1 to VLAN 3.<br>
+<p>Questions:
+All hosts on LAN HQ, BRANCH1 and BRANCH2 of PT. AR, as well as Internet Client PCs on the Internet subnet, are unable to access the ntbprov.go.id site, but can access other sites.</p>
+<p>Answers:
+Assign port Ethernet0/1 to VLAN 3.<br>
 In object-network server-dmz, change the interface in out.</p>
-<h4 id="asa-ntbprov">ASA-NTBPROV</h4>
+<p>ASA-NTBPROV</p>
 <p>Configuration :</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">ciscoasa&gt;en
 </span></span><span class="line"><span class="cl">ciscoasa#conf t
@@ -836,7 +816,7 @@ At HQ, the error &ldquo;%CRYPTO-4-RECVD PKT INV SPI: decaps: received IPSEC pack
 
   </main>
   <footer>Made with a "small" customized and some love from <a href="https://github.com/janraasch/hugo-bearblog/"> Hugo ʕ•ᴥ•ʔ Bear</a>
-<script src="/js/copy-code-button.js"></script>
+<script src="/js/copy-code-button.js1"></script>
 </footer>
 
     

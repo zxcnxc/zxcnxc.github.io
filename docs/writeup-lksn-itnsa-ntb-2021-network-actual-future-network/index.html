@@ -36,7 +36,7 @@
 <meta itemprop="name" content="Writeup LKSN ITNSA NTB 2021 - Network Actual &amp; Future Network">
 <meta itemprop="description" content="Using Cisco Packet Tracer, configure servers and routers on the existing network from headquarters to branches"><meta itemprop="datePublished" content="2022-03-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="9140"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
+<meta itemprop="wordCount" content="9048"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
 <meta itemprop="keywords" content="Cisco,Writeup,ITNSA,LKSN,Server,Router,Wireless Router,Verification Client,Packet Tracer,GRE OVER IPSEC,OSPF,DHCP,NAT,NTP,RBAC,WLC,LWAP,InterVLAN,RADIUS," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -50,7 +50,6 @@
     background-color: #333;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.7;
     color: #ddd;
     font-size: 16px;
     font-size: 120%;
@@ -153,6 +152,7 @@
     padding-left: auto;
     padding: 20px;
     text-align: center;
+    font-size: 16px;
   }
 
   .helptext {
@@ -352,132 +352,27 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#task-1">Task 1</a>
-      <ul>
-        <li><a href="#hq-mataram-server-configuration">HQ MATARAM Server Configuration</a></li>
-        <li><a href="#completed-points-8">Completed Points: 8%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-2">Task 2</a>
-      <ul>
-        <li><a href="#hq-mataram-router-configuration">HQ MATARAM Router Configuration</a></li>
-        <li><a href="#completed-points--19">Completed Points:  19%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-3">Task 3</a>
-      <ul>
-        <li><a href="#sw_hq_l1-switch-configuration-at-hq-mataram">SW_HQ_L1 Switch Configuration at HQ MATARAM</a></li>
-        <li><a href="#completed-points-5">Completed Points: 5%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-4">Task 4</a>
-      <ul>
-        <li><a href="#sw_hq_l2-switch-configuration-at-hq-mataram">SW_HQ_L2 Switch Configuration at HQ MATARAM</a></li>
-        <li><a href="#completed-points-3">Completed Points: 3%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-5">Task 5</a>
-      <ul>
-        <li><a href="#admin2-pc-configuration-and-verification-at-hq-mataram">Admin2 PC Configuration and Verification at HQ MATARAM</a></li>
-        <li><a href="#completed-points-0">Completed Points: 0%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-6">Task 6</a>
-      <ul>
-        <li><a href="#wireless-controller-wlc-configuration-at-hq-mataram">Wireless Controller (WLC) Configuration at HQ MATARAM</a></li>
-        <li><a href="#completed-points-8-1">Completed Points: 8%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-7">Task 7</a>
-      <ul>
-        <li><a href="#leighweight-access-point-lwap-configuration-at-hq-mataram">LeighWeight Access Point (LWAP) Configuration at HQ MATARAM</a></li>
-        <li><a href="#completed-points-0-1">Completed Points: 0%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-8">Task 8</a>
-      <ul>
-        <li><a href="#end-device-configuration-and-verification-on-hrd-and-marketing-vlans-at-hq-mataram">End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM</a></li>
-        <li><a href="#completed-points-0-2">Completed Points: 0%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-9">Task 9</a>
-      <ul>
-        <li><a href="#branch-sumbawa-server-configuration">BRANCH SUMBAWA Server Configuration</a></li>
-        <li><a href="#completed-points-10">Completed Points: 10%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-10">Task 10</a>
-      <ul>
-        <li><a href="#branch-sumbawa-router-configuration">BRANCH SUMBAWA Router Configuration</a></li>
-        <li><a href="#completed-points-11">Completed Points: 11%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-11">Task 11</a>
-      <ul>
-        <li><a href="#sw_branch-switch-configuration-at-branch-sumbawa">SW_BRANCH Switch Configuration at BRANCH SUMBAWA</a></li>
-        <li><a href="#completed-points-3-1">Completed Points: 3%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-12">Task 12</a>
-      <ul>
-        <li><a href="#dhcp-client-configuration-and-internet-connection-verification-on-vlan-2-sales-pc-at-branch-sumbawa">DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA</a></li>
-        <li><a href="#completed-points-0-3">Completed Points: 0%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-13">Task 13</a>
-      <ul>
-        <li><a href="#wrt_branch-wireless-router-configuration-at-branch-sumbawa">WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA</a></li>
-        <li><a href="#completed-points-4">Completed Points: 4%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-14">Task 14</a>
-      <ul>
-        <li><a href="#end-device-configuration-and-verification-at-wlan-engineer-branch-sumbawa">End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA</a></li>
-        <li><a href="#completed-points-2">Completed Points: 2%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-15">Task 15</a>
-      <ul>
-        <li><a href="#vpn-configuration-on-an-hq-mataram-router-utilizing-gre-over-ipsec-and-ospf">VPN Configuration on an HQ MATARAM Router utilizing GRE over IPSec and OSPF</a></li>
-        <li><a href="#completed-points-8-2">Completed Points: 8%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-16">Task 16</a>
-      <ul>
-        <li><a href="#vpn-configuration-on-an-branch-sumbawa-router-utilizing-gre-over-ipsec-and-ospf">VPN Configuration on an BRANCH SUMBAWA Router utilizing GRE over IPSec and OSPF</a></li>
-        <li><a href="#completed-points-8-3">Completed Points: 8%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-17">Task 17</a>
-      <ul>
-        <li><a href="#vpn-connection-verification-from-the-end-device-at-hq-mataram">VPN Connection Verification from the End Device at HQ MATARAM</a></li>
-        <li><a href="#completed-points-0-4">Completed Points: 0%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-18">Task 18</a>
-      <ul>
-        <li><a href="#vpn-connection-verification-from-the-end-device-at-branch-sumbawa">VPN Connection Verification from the End Device at BRANCH SUMBAWA</a></li>
-        <li><a href="#completed-points-0-5">Completed Points: 0%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-19">Task 19</a>
-      <ul>
-        <li><a href="#roled-based-access-control-rbac-configuration-at-router-hq-mataram">Roled Based Access Control (RBAC) configuration at router HQ MATARAM</a></li>
-        <li><a href="#completed-points-1">Completed Points: 1%</a></li>
-      </ul>
-    </li>
-    <li><a href="#task-20">Task 20</a>
-      <ul>
-        <li><a href="#roled-based-access-control-rbac-configuration-at-router-branch-sumbawa">Roled Based Access Control (RBAC) configuration at router BRANCH SUMBAWA</a></li>
-        <li><a href="#completed-points-1-1">Completed Points: 1%</a></li>
-      </ul>
-    </li>
-    <li><a href="#complete-configuration">Complete Configuration</a>
-      <ul>
-        <li><a href="#router-hq-mataram">Router HQ MATARAM</a></li>
-        <li><a href="#router-branch-sumbawa">Router BRANCH SUMBAWA</a></li>
-      </ul>
-    </li>
+    <li><a href="#task-1-hq-mataram-server-configuration">Task 1: HQ MATARAM Server Configuration</a></li>
+    <li><a href="#task-2-hq-mataram-router-configuration">Task 2: HQ MATARAM Router Configuration</a></li>
+    <li><a href="#task-3-sw_hq_l1-switch-configuration-at-hq-mataram">Task 3: SW_HQ_L1 Switch Configuration at HQ MATARAM</a></li>
+    <li><a href="#task-4-sw_hq_l2-switch-configuration-at-hq-mataram">Task 4: SW_HQ_L2 Switch Configuration at HQ MATARAM</a></li>
+    <li><a href="#task-5-admin2-pc-configuration-and-verification-at-hq-mataram">Task 5: Admin2 PC Configuration and Verification at HQ MATARAM</a></li>
+    <li><a href="#task-6-wlc-configuration-at-hq-mataram">Task 6: WLC Configuration at HQ MATARAM</a></li>
+    <li><a href="#task-7-lwap-configuration-at-hq-mataram">Task 7: LWAP Configuration at HQ MATARAM</a></li>
+    <li><a href="#task-8-end-device-configuration-and-verification-on-hrd-and-marketing-vlans-at-hq-mataram">Task 8: End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM</a></li>
+    <li><a href="#task-9-branch-sumbawa-server-configuration">Task 9: BRANCH SUMBAWA Server Configuration</a></li>
+    <li><a href="#task-10-branch-sumbawa-router-configuration">Task 10: BRANCH SUMBAWA Router Configuration</a></li>
+    <li><a href="#task-11-sw_branch-switch-configuration-at-branch-sumbawa">Task 11: SW_BRANCH Switch Configuration at BRANCH SUMBAWA</a></li>
+    <li><a href="#task-12-dhcp-client-configuration-and-internet-connection-verification-on-vlan-2-sales-pc-at-branch-sumbawa">Task 12: DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA</a></li>
+    <li><a href="#task-13-wrt_branch-wireless-router-configuration-at-branch-sumbawa">Task 13: WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA</a></li>
+    <li><a href="#task-14-end-device-configuration-and-verification-at-wlan-engineer-branch-sumbawa">Task 14: End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA</a></li>
+    <li><a href="#task-15-vpn-configuration-on-an-hq-mataram-router-using-gre-over-ipsec-and-ospf">Task 15: VPN configuration on an HQ MATARAM router using GRE over IPSec and OSPF</a></li>
+    <li><a href="#task-16-vpn-configuration-on-a-branch-sumbawa-router-using-gre-over-ipsec-and-ospf">Task 16: VPN configuration on a BRANCH SUMBAWA router using GRE over IPSec and OSPF</a></li>
+    <li><a href="#task-17-verification-of-vpn-connection-from-end-device-at-hq-mataram">Task 17: Verification of VPN Connection from End Device at HQ MATARAM</a></li>
+    <li><a href="#task-18-verification-of-vpn-connection-from-end-device-at-branch-sumbawa">Task 18: Verification of VPN Connection from End Device at BRANCH SUMBAWA</a></li>
+    <li><a href="#task-19-rbac-configuration-at-router-hq-mataram">Task 19: RBAC Configuration at router HQ MATARAM</a></li>
+    <li><a href="#task-20-rbac-configuration-at-router-branch-sumbawa">Task 20: RBAC Configuration at router BRANCH SUMBAWA</a></li>
+    <li><a href="#complete-configuration">Complete Configuration</a></li>
     <li><a href="#summary">Summary</a></li>
   </ul>
 </nav>
@@ -522,8 +417,7 @@
   </figure>
 
 <hr />
-<h2 id="task-1">Task 1</h2>
-<h3 id="hq-mataram-server-configuration">HQ MATARAM Server Configuration</h3>
+<h2 id="task-1-hq-mataram-server-configuration">Task 1: HQ MATARAM Server Configuration</h2>
 <ol>
 <li>
 <p>Set the IP addressing and default gateway and DNS on the HQ Server with the following conditions:</p>
@@ -658,11 +552,10 @@
 
 </li>
 </ol>
-<h3 id="completed-points-8">Completed Points: 8%</h3>
+<p>Completed Points: 8%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-2">Task 2</h2>
-<h3 id="hq-mataram-router-configuration">HQ MATARAM Router Configuration</h3>
+<h2 id="task-2-hq-mataram-router-configuration">Task 2: HQ MATARAM Router Configuration</h2>
 <ol>
 <li>Set the router&rsquo;s hostname with the name &ldquo;HQ&rdquo;.</li>
 </ol>
@@ -1011,11 +904,10 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span class="line"><span class="cl">end
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">HQ#
-</span></span></code></pre></div><h3 id="completed-points--19">Completed Points:  19%</h3>
+</span></span></code></pre></div><p>Completed Points:  19%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-3">Task 3</h2>
-<h3 id="sw_hq_l1-switch-configuration-at-hq-mataram">SW_HQ_L1 Switch Configuration at HQ MATARAM</h3>
+<h2 id="task-3-sw_hq_l1-switch-configuration-at-hq-mataram">Task 3: SW_HQ_L1 Switch Configuration at HQ MATARAM</h2>
 <ol>
 <li>Set the hostname of the Switch with the name &ldquo;SW_HQ_L1&rdquo;.</li>
 </ol>
@@ -1152,11 +1044,10 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span class="line"><span class="cl">end
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">SW_HQ_L1#
-</span></span></code></pre></div><h3 id="completed-points-5">Completed Points: 5%</h3>
+</span></span></code></pre></div><p>Completed Points: 5%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-4">Task 4</h2>
-<h3 id="sw_hq_l2-switch-configuration-at-hq-mataram">SW_HQ_L2 Switch Configuration at HQ MATARAM</h3>
+<h2 id="task-4-sw_hq_l2-switch-configuration-at-hq-mataram">Task 4: SW_HQ_L2 Switch Configuration at HQ MATARAM</h2>
 <ol>
 <li>Set the hostname of the Switch with the name “SW_HQ_L2”.</li>
 </ol>
@@ -1246,11 +1137,10 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span class="line"><span class="cl">end
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">SW_HQ_L2#
-</span></span></code></pre></div><h3 id="completed-points-3">Completed Points: 3%</h3>
+</span></span></code></pre></div><p>Completed Points: 3%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-5">Task 5</h2>
-<h3 id="admin2-pc-configuration-and-verification-at-hq-mataram">Admin2 PC Configuration and Verification at HQ MATARAM</h3>
+<h2 id="task-5-admin2-pc-configuration-and-verification-at-hq-mataram">Task 5: Admin2 PC Configuration and Verification at HQ MATARAM</h2>
 <ol>
 <li>
 <p>Set up the DHCP Client on the Admin2 PC at the MATARAM head office. <br>
@@ -1291,11 +1181,10 @@ Make sure the connection is successful.</p>
 
 </li>
 </ol>
-<h3 id="completed-points-0">Completed Points: 0%</h3>
+<p>Completed Points: 0%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-6">Task 6</h2>
-<h3 id="wireless-controller-wlc-configuration-at-hq-mataram">Wireless Controller (WLC) Configuration at HQ MATARAM</h3>
+<h2 id="task-6-wlc-configuration-at-hq-mataram">Task 6: WLC Configuration at HQ MATARAM</h2>
 <ol>
 <li>
 <p>Perform the initial setup on the WLC HQ using the browser from the PC Admin1 desktop by entering the WLC&rsquo;s IP address, which is http://192.168.1.1. <br>
@@ -1625,11 +1514,10 @@ Login using username &ldquo;admin&rdquo; and password &ldquo;LksNTB2021&rdquo;.<
 </p>
 </li>
 </ol>
-<h3 id="completed-points-8-1">Completed Points: 8%</h3>
+<p>Completed Points: 8%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-7">Task 7</h2>
-<h3 id="leighweight-access-point-lwap-configuration-at-hq-mataram">LeighWeight Access Point (LWAP) Configuration at HQ MATARAM</h3>
+<h2 id="task-7-lwap-configuration-at-hq-mataram">Task 7: LWAP Configuration at HQ MATARAM</h2>
 <ol>
 <li>Configure IP addressing dynamically or as a DHCP Client on LWAP_HQ_L1 and LWAP_HQ_L2. <br>
 Double-check the setup to ensure that each LWAP has received dynamic IP addresses from the DHCP Server.</li>
@@ -1727,11 +1615,10 @@ Double-check the setup to ensure that each LWAP has received dynamic IP addresse
     <figcaption><p style="text-align: center;"></p></figcaption>
   </figure>
 </p>
-<h3 id="completed-points-0-1">Completed Points: 0%</h3>
+<p>Completed Points: 0%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-8">Task 8</h2>
-<h3 id="end-device-configuration-and-verification-on-hrd-and-marketing-vlans-at-hq-mataram">End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM</h3>
+<h2 id="task-8-end-device-configuration-and-verification-on-hrd-and-marketing-vlans-at-hq-mataram">Task 8: End Device Configuration and Verification on HRD and MARKETING VLANs at HQ MATARAM</h2>
 <ol>
 <li>
 <p>Set the DHCP Client on the Wireless0 interface of each End Device on VLAN HRD and MARKETING, namely Laptop_HRD1, Laptop_HRD2, Laptop_MKT1, and Laptop_MKT2, to get dynamic IP addressing from the DHCP Server.</p>
@@ -1953,11 +1840,10 @@ Check that the connection is working properly.</p>
 
 </li>
 </ol>
-<h3 id="completed-points-0-2">Completed Points: 0%</h3>
+<p>Completed Points: 0%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-9">Task 9</h2>
-<h3 id="branch-sumbawa-server-configuration">BRANCH SUMBAWA Server Configuration</h3>
+<h2 id="task-9-branch-sumbawa-server-configuration">Task 9: BRANCH SUMBAWA Server Configuration</h2>
 <ol>
 <li>
 <p>Set the IP addressing and default gateway and DNS on the BRANCH Server with the following conditions:</p>
@@ -2097,11 +1983,10 @@ Check that the connection is working properly.</p>
 
 </li>
 </ol>
-<h3 id="completed-points-10">Completed Points: 10%</h3>
+<p>Completed Points: 10%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-10">Task 10</h2>
-<h3 id="branch-sumbawa-router-configuration">BRANCH SUMBAWA Router Configuration</h3>
+<h2 id="task-10-branch-sumbawa-router-configuration">Task 10: BRANCH SUMBAWA Router Configuration</h2>
 <ol>
 <li>Set the router’s hostname with the name “BRANCH”.</li>
 </ol>
@@ -2378,11 +2263,10 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span class="line"><span class="cl">end
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">BRANCH#
-</span></span></code></pre></div><h3 id="completed-points-11">Completed Points: 11%</h3>
+</span></span></code></pre></div><p>Completed Points: 11%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-11">Task 11</h2>
-<h3 id="sw_branch-switch-configuration-at-branch-sumbawa">SW_BRANCH Switch Configuration at BRANCH SUMBAWA</h3>
+<h2 id="task-11-sw_branch-switch-configuration-at-branch-sumbawa">Task 11: SW_BRANCH Switch Configuration at BRANCH SUMBAWA</h2>
 <ol>
 <li>Set the hostname of the Switch with the name “SW_BRANCH”.</li>
 </ol>
@@ -2490,11 +2374,10 @@ This account is a backup when authentication to the Radius server has problems.<
 </span></span><span class="line"><span class="cl">end
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">SW_BRANCH#
-</span></span></code></pre></div><h3 id="completed-points-3-1">Completed Points: 3%</h3>
+</span></span></code></pre></div><p>Completed Points: 3%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-12">Task 12</h2>
-<h3 id="dhcp-client-configuration-and-internet-connection-verification-on-vlan-2-sales-pc-at-branch-sumbawa">DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA</h3>
+<h2 id="task-12-dhcp-client-configuration-and-internet-connection-verification-on-vlan-2-sales-pc-at-branch-sumbawa">Task 12: DHCP Client Configuration and Internet Connection Verification on VLAN 2 SALES PC at BRANCH SUMBAWA</h2>
 <ol>
 <li>
 <p>Configure each PC in VLAN 2 SALES Sumbawa BRANCH as a DHCP client and enable 802.1x security features with authentication accounts, as shown in the table below:</p>
@@ -2626,11 +2509,10 @@ Check that the connection is working properly.</p>
 
 </li>
 </ol>
-<h3 id="completed-points-0-3">Completed Points: 0%</h3>
+<p>Completed Points: 0%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-13">Task 13</h2>
-<h3 id="wrt_branch-wireless-router-configuration-at-branch-sumbawa">WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA</h3>
+<h2 id="task-13-wrt_branch-wireless-router-configuration-at-branch-sumbawa">Task 13: WRT_BRANCH Wireless Router Configuration at BRANCH SUMBAWA</h2>
 <ol>
 <li>
 <p>In Internet Setup, configure the IP addressing statically or manually using the following conditions:</p>
@@ -2734,11 +2616,10 @@ The DNS Server option is set to 192.0.2.1.</p>
 </p>
 </li>
 </ol>
-<h3 id="completed-points-4">Completed Points: 4%</h3>
+<p>Completed Points: 4%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-14">Task 14</h2>
-<h3 id="end-device-configuration-and-verification-at-wlan-engineer-branch-sumbawa">End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA</h3>
+<h2 id="task-14-end-device-configuration-and-verification-at-wlan-engineer-branch-sumbawa">Task 14: End Device Configuration and Verification at WLAN ENGINEER BRANCH SUMBAWA</h2>
 <ol>
 <li>
 <p>Set the DHCP Client on the Wireless0 interface of each End Device on the WLAN ENGINEER subnet, namely Tablet_ENGINEER1 and Tablet_ENGINEER2, to get dynamic IP addressing from the DHCP Server.</p>
@@ -2797,11 +2678,10 @@ Use an authentication account as mentioned in the table below:</p>
     <figcaption><p style="text-align: center;"></p></figcaption>
   </figure>
 </p>
-<h3 id="completed-points-2">Completed Points: 2%</h3>
+<p>Completed Points: 2%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-15">Task 15</h2>
-<h3 id="vpn-configuration-on-an-hq-mataram-router-utilizing-gre-over-ipsec-and-ospf">VPN Configuration on an HQ MATARAM Router utilizing GRE over IPSec and OSPF</h3>
+<h2 id="task-15-vpn-configuration-on-an-hq-mataram-router-using-gre-over-ipsec-and-ospf">Task 15: VPN configuration on an HQ MATARAM router using GRE over IPSec and OSPF</h2>
 <ol>
 <li>
 <p>Create an Extended Named ACL with the name &ldquo;INTERESTING-TRAFFIC&rdquo; for:</p>
@@ -3114,11 +2994,10 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span class="line"><span class="cl">end
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">HQ#
-</span></span></code></pre></div><h3 id="completed-points-8-2">Completed Points: 8%</h3>
+</span></span></code></pre></div><p>Completed Points: 8%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-16">Task 16</h2>
-<h3 id="vpn-configuration-on-an-branch-sumbawa-router-utilizing-gre-over-ipsec-and-ospf">VPN Configuration on an BRANCH SUMBAWA Router utilizing GRE over IPSec and OSPF</h3>
+<h2 id="task-16-vpn-configuration-on-a-branch-sumbawa-router-using-gre-over-ipsec-and-ospf">Task 16: VPN configuration on a BRANCH SUMBAWA router using GRE over IPSec and OSPF</h2>
 <ol>
 <li>
 <p>Create an Extended Named ACL with the name &ldquo;INTERESTING-TRAFFIC&rdquo; for:</p>
@@ -3390,8 +3269,8 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span class="line"><span class="cl">address ipv4 10.0.15.4 auth-port 1645
 </span></span><span class="line"><span class="cl">key NTBJawara2021
 </span></span><span class="line"><span class="cl">!
-</span></span><span class="line"><span class="cl">line con 0
 </span></span><span class="line"><span class="cl">login authentication SERVER-AAA
+</span></span><span class="line"><span class="cl">line con 0
 </span></span><span class="line"><span class="cl">!
 </span></span><span class="line"><span class="cl">line aux 0
 </span></span><span class="line"><span class="cl">!
@@ -3407,10 +3286,9 @@ Use an authentication account as mentioned in the table below:</p>
 </span></span><span class="line"><span class="cl">end
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">BRANCH#
-</span></span></code></pre></div><h3 id="completed-points-8-3">Completed Points: 8%</h3>
+</span></span></code></pre></div><p>Completed Points: 8%</p>
 <hr />
-<h2 id="task-17">Task 17</h2>
-<h3 id="vpn-connection-verification-from-the-end-device-at-hq-mataram">VPN Connection Verification from the End Device at HQ MATARAM</h3>
+<h2 id="task-17-verification-of-vpn-connection-from-end-device-at-hq-mataram">Task 17: Verification of VPN Connection from End Device at HQ MATARAM</h2>
 <ol>
 <li>Use Simple PDU to verify the connection between the End Device on VLAN SALES and WLAN ENGINEER at BRANCH SUMBAWA and the End Device on VLAN HRD and MARKETING at HQ MATARAM. <br>
 Check that the connection is working properly.</li>
@@ -3469,11 +3347,10 @@ Check that the FTP service can be accessed.</li>
     <figcaption><p style="text-align: center;"></p></figcaption>
   </figure>
 
-<h3 id="completed-points-0-4">Completed Points: 0%</h3>
+<p>Completed Points: 0%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-18">Task 18</h2>
-<h3 id="vpn-connection-verification-from-the-end-device-at-branch-sumbawa">VPN Connection Verification from the End Device at BRANCH SUMBAWA</h3>
+<h2 id="task-18-verification-of-vpn-connection-from-end-device-at-branch-sumbawa">Task 18: Verification of VPN Connection from End Device at BRANCH SUMBAWA</h2>
 <ol>
 <li>Verification the connection using Simple PDU from the End Device located on VLAN SALES and WLAN ENGINEER from BRANCH SUMBAWA to the End Device located on VLAN HRD and MARKETING at HQ MATARAM. <br>
 Make sure the connection is successful.</li>
@@ -3532,11 +3409,10 @@ Make sure the FTP service can be accessed.</li>
     <figcaption><p style="text-align: center;"></p></figcaption>
   </figure>
 
-<h3 id="completed-points-0-5">Completed Points: 0%</h3>
+<p>Completed Points: 0%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-19">Task 19</h2>
-<h3 id="roled-based-access-control-rbac-configuration-at-router-hq-mataram">Roled Based Access Control (RBAC) configuration at router HQ MATARAM</h3>
+<h2 id="task-19-rbac-configuration-at-router-hq-mataram">Task 19: RBAC Configuration at router HQ MATARAM</h2>
 <ol>
 <li>Create a view called &ldquo;support&rdquo; and set its password to &ldquo;mandalika&rdquo;.</li>
 </ol>
@@ -3557,11 +3433,10 @@ Make sure the FTP service can be accessed.</li>
 </span></span><span class="line"><span class="cl">commands exec include ping
 </span></span><span class="line"><span class="cl">commands exec include all show
 </span></span><span class="line"><span class="cl">commands exec include traceroute
-</span></span></code></pre></div><h3 id="completed-points-1">Completed Points: 1%</h3>
+</span></span></code></pre></div><p>Completed Points: 1%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
-<h2 id="task-20">Task 20</h2>
-<h3 id="roled-based-access-control-rbac-configuration-at-router-branch-sumbawa">Roled Based Access Control (RBAC) configuration at router BRANCH SUMBAWA</h3>
+<h2 id="task-20-rbac-configuration-at-router-branch-sumbawa">Task 20: RBAC Configuration at router BRANCH SUMBAWA</h2>
 <ol>
 <li>Create a view called &ldquo;helpdesk&rdquo; and set its password to &ldquo;mandalika&rdquo;.</li>
 </ol>
@@ -3588,7 +3463,7 @@ Make sure the FTP service can be accessed.</li>
 </span></span><span class="line"><span class="cl">commands exec include show ip protocols
 </span></span><span class="line"><span class="cl">commands exec include show ip route
 </span></span><span class="line"><span class="cl">commands exec include traceroute
-</span></span></code></pre></div><h3 id="completed-points-1-1">Completed Points: 1%</h3>
+</span></span></code></pre></div><p>Completed Points: 1%</p>
 <p><a href="#">Back to top</a></p>
 <hr />
 <h2 id="complete-configuration">Complete Configuration</h2>
@@ -3607,7 +3482,7 @@ Make sure the FTP service can be accessed.</li>
     <figcaption><p style="text-align: center;"></p></figcaption>
   </figure>
 
-<h3 id="router-hq-mataram">Router HQ MATARAM</h3>
+<p>Router HQ MATARAM</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">HQ#show run
 </span></span><span class="line"><span class="cl">Building configuration...
 </span></span><span class="line"><span class="cl">
@@ -3787,7 +3662,7 @@ Make sure the FTP service can be accessed.</li>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">HQ#
-</span></span></code></pre></div><h3 id="router-branch-sumbawa">Router BRANCH SUMBAWA</h3>
+</span></span></code></pre></div><p>Router BRANCH SUMBAWA</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-HTML" data-lang="HTML"><span class="line"><span class="cl">BRANCH#sh run
 </span></span><span class="line"><span class="cl">Building configuration...
 </span></span><span class="line"><span class="cl">
@@ -4053,7 +3928,7 @@ Thank you very much.</p>
 
   </main>
   <footer>Made with a "small" customized and some love from <a href="https://github.com/janraasch/hugo-bearblog/"> Hugo ʕ•ᴥ•ʔ Bear</a>
-<script src="/js/copy-code-button.js"></script>
+<script src="/js/copy-code-button.js1"></script>
 </footer>
 
     
