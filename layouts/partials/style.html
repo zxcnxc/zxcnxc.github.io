@@ -1,0 +1,281 @@
+<style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 22px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #333;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: #ddd;
+    font-size: 16px;
+    font-size: 120%;
+  }
+
+  h1 {
+    color:#eee;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #eee;
+  }
+
+  a {
+    color: #8cc2dd;
+    /*color: #ff5e6c;*/
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  figcaption {
+    font-size: 16px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    text-align: left;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    /* display: block;
+    overflow: scroll;
+    white-space: pre-wrap;
+    text-indent: 20px; */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #777;
+  }
+
+  pre code {
+    color: #ddd;
+    display: block;
+    padding: 20px;
+    white-space: wrap;
+    overflow: auto;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: #272822;
+    color: rgb(255, 255, 255);
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #ccc;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding-left: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+  /* blog posts */
+  ul.blog-posts {
+    list-style-type: none;
+  }
+
+   ul.blog-posts li {
+    text-align: start;
+    list-style-type: none;
+  } 
+
+  ul.blog-posts li span {
+    display:flex;
+    flex-flow: row wrap;
+    flex: 1 100%;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  .highlight-wrapper {
+  display: block;
+}
+
+/* Start: Turn off individual column border, margin, and padding when line numbers are showing */
+.highlight-wrapper .lntd pre {
+    padding: 0;
+}
+
+.chroma .lntd pre {
+    border: 0px solid #ccc;
+}
+
+.chroma .lntd:first-child {
+  padding: 7px 7px 7px 10px;
+  margin: 0;
+}
+
+.chroma .lntd:last-child {
+  padding: 7px 10px 7px 7px;
+  margin: 0;
+}
+/* End: Turn off individual column border, margin, and padding when line numbers are showing */
+
+.highlight {
+  position: relative;
+  z-index: 0;
+  padding: 0;
+  border-radius: 4px;
+  margin:-15px -1px 10px -1px;
+
+}
+
+.highlight > .chroma {
+  position: static;
+  z-index: 1;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 10px;
+}
+
+.copy-code-button {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: -29px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.5px;
+  width: 65px;
+  color: #ffffff;
+  background-color: #000000;
+  border: 1.25px solid #232326;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  white-space: nowrap;
+  padding: 3px 5px 5px 5px;
+  margin: 38px 10px 0 1px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.copy-code-button:hover,
+.copy-code-button:focus,
+.copy-code-button:active,
+.copy-code-button:active:hover {
+  color: #222225;
+  background-color: #b3b3b3;
+  opacity: 0.8;
+}
+
+.copyable-text-area {
+  position: absolute;
+  height: 0;
+  z-index: -1;
+  opacity: .01;
+}
+
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+
+    time {
+      text-align: justify;
+    }
+  }
+
+</style>
