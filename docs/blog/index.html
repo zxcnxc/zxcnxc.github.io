@@ -115,11 +115,10 @@
 
   code {
     padding: 2px 5px;
-    background-color: #777;
+    color: #ddd;
   }
 
   pre code {
-    color: #ddd;
     display: block;
     padding: 20px;
     white-space: wrap;
@@ -264,15 +263,30 @@
   opacity: .01;
 }
 
-#boxshadow 
-{     
-
+#boxshadow {     
 border: 5px solid rgb(202, 202, 202);
 box-shadow: 5px 6px #4D4D59; 
 padding-left: 10px;
 }
 
 
+.imglogo{
+  object-fit: cover;
+  object-position: 290px;
+}
+
+ ascii{
+    padding: 2px 5px;
+    color: #ddd;
+ }
+
+ pre ascii {
+    display: block;
+    padding: 20px;
+    white-space: wrap;
+    overflow: hidden;
+    font-size: 10px;
+ }
 
 
   @media (prefers-color-scheme: dark) {
@@ -296,13 +310,11 @@ padding-left: 10px;
       color: #8cc2dd;
     }
 
-    code {
-      background-color: #777;
-    }
-
     pre code {
       color: #ddd;
     }
+
+  
 
     blockquote {
       color: #ccc;
@@ -322,6 +334,14 @@ padding-left: 10px;
       text-align: justify;
     }
   }
+
+  @media (max-width: 550px) {
+    pre ascii {
+       font-size: 4px;
+       padding: 11px;
+       overflow: hidden;
+       }
+  } 
 
 </style>
 <link rel="canonical" href="https://zxcnxc.github.io/blog/" />

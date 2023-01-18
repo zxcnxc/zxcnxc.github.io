@@ -14,10 +14,8 @@ description = "Hello, I'm a random guy who enjoys IT, especially obscure technol
    
    PSA: Don't hate me if the first thing you see is an anime picture or incorrect grammar and bad formatting of the post, I'm still trying to learn to fix for those things and I'm a weeb.
 
-   You can contact me through : <br>
-   Email: enhjbnhjQHByb3Rvbm1haWwuY29t <br>
-   Discord: zxcnxc#7737 <br>
-   Twitter: zxcnxc </p>
+   My email is zxcnxc at protonmail.com. You can also find me on twitter or github with same username
+
 </div>
 
 
