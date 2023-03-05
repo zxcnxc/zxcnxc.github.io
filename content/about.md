@@ -4,18 +4,17 @@ description = "Hello, I'm a random guy who enjoys IT, especially obscure technol
 +++
 
 
-![heyo](/images/placeholder.jpg)
+![heyo](/images/aye.png)
 
 <div id="boxshadow">
-   <h1>Hi!</h1>
-   <p>I'm ZXCNXC / All <br>
-   I work as a Fiber Optic Technician a.k.a FOT, my job is to configure network devices for remote monitoring of SCADA services and power plant PLCs. <br>
-   I created this blog just for personal documentation about Security, Networking and other things I am interested in.<br>
+   <h1>Hello!</h1>
+   <p>My name is All, also known as ZXC / zxcnxc. <br>
+   I work as a Fiber Optic Technician.<br>
+   This blog is a space where I share my thoughts, ideas, and experiences on a variety of topics that I'm passionate about. From Networks, Linux etc.
    
-   PSA: Don't hate me if the first thing you see is an anime picture or incorrect grammar and bad formatting of the post, I'm still trying to learn to fix for those things and I'm a weeb.
+   PSA: Don't hate me if the first thing you see is an anime picture or weird grammar and bad formatting of the post, I'm still trying to learn to fix for those things.
 
-   My email is zxcnxc at protonmail.com. You can also find me on twitter or github with same username
-
+   You can also find me on twitter or github with same username
 </div>
 
 
@@ -28,9 +27,9 @@ description = "Hello, I'm a random guy who enjoys IT, especially obscure technol
                                                                  . 5!:  . ~Y7?....     !5                  :^!?JJ?~^..                                               ..         ..^~7?JGG55Y7~:.  :JG^. G?.                                               
                                                                  ..5?: . ^?7 .J7~!~.    ~Y^             .      .:^~YJ!!7.       .                                    ...:^!7777JYJJYJ77^:..      :J#YG.7&!                                                
                                                                    B!  . .~? .~:!P^    ^5BG:.           .         .  .:??Y?!:   .                             ^^!7??JJ?7JJYJ!~^^:.     .         .^^PP G@!                                                
-                                                               .   YP?: ~!.: . .~?7:   :Y#BB.                       .    :!Y5J7^                        ..^!7JJ!!^^::.  .                         .~#. B&~                                                
                                                                   . :?Y777~^. .!..P~    ~BJ7..                              :7YJ?7~.               ..:!!7??!^:                                    ^G~  P&~ .                                              
                                                                    .. !B5^~?^:7!7?!.  .  ~B  .                       .  .. ..   .!5?.         .   :?Y57^.                                        .!#. .^&! .                                              
+                                                               .   YP?: ~!.: . .~?7:   :Y#BB.                       .    :!Y5J7^                        ..^!7JJ!!^^::.  .                         .~#. B&~                                                
                                                                    ... :PY :!~.          :G!                  ..:^7?JJP5PPJ5YY?!Y^J5?7J!?!?5?557J5GY~^. .                                        .7G:.  !P!                                               
                                                                       . .??               ^B:.           .:~JPPPP5PGJGJ5J5J5YY5J5JPJPYPYPYY5J5JPJG5GY5GPPGPPY!^:          . .                    ~G^     ?P?:                                             
                                                                          !G~ .            .:5.       .^7YGBBGPYJYYJY5YYY5JY5YY555555Y555Y555YJY55JJYYY5YYPG5#BBBB555J????7!!^...                ~Y:      ^YGJ:  :~!!!!.^:   .!~   ^~!!~: ^!!!!!!^.  .~!!~ 
