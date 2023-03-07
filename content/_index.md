@@ -1,7 +1,6 @@
 +++
 title = "Home"
 description = "When a miserable weeb meet a Network, Servers, and Security."
-canonical = "https://zxcnxc.github.io"
 +++
 
 <pre ascii><ascii>xdddddddxxdoolllloooolc::ccllodddodxkO0KXXXXXXK0Okxdoodooollollooddddolcc::;;;:;;:cldkOKXXXXXNNNNNNXK0kdocccloddxxxxxxxxdxxxxdxxxxxxxxxxxxxxxxxxxddool
@@ -47,4 +46,4 @@ ccccc:::loodxkxddxkOOKXNNNNNNNNNNNNNNNNNWWWWWWWWWWWWWWWWWWWWWWWNNNNNWWWWWWWWWNNN
 ddooolc:clodxkkxdxkOO0XNNNNNNNNNNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNNNWWWWWWWWWWWWWWWWWWWWWWWWWWWWWNNNNNNNNNNNNNNNNNNNNNNWWWWWWWWNXKOkxdddd
 dddddolclllodxkxdxxkkO0XXXXXXXXXXXXXXXXNNNNNNNNNNNNNNNNXXXXXXXXNNNNXXXXXXXXXXXXXXXXXXNNNNNNNNNNNNNNNNNNNNNNXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXNNXXKKK000KK0
 </ascii></pre ascii>
-<h6 align="center" style="margin-top:-20px;">"Hi!, Welcome to my personal notes aka blog aka documentation, whatever you call it."</h4>
+<h6 style="margin-top: -20px; font-size: 70%; text-align: center; margin-left: 20px; ">"Hi!, Welcome to my personal notes aka blog aka documentation, whatever you call it."</h6>

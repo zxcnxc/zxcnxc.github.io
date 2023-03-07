@@ -2,7 +2,6 @@
 title = "Writeup LKSN ITNSA NTB 2021 - Network Actual & Future Network"
 date = "2022-03-15"
 description = "Using Cisco Packet Tracer, configure servers and routers on the existing network from headquarters to branches"
-canonical = "https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-network-actual-future-network/"
 tags = [
     "Cisco",
     "Writeup",

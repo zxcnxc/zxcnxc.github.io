@@ -2,7 +2,6 @@
 title = "eNSP VS WSL 2"
 date = "2021-12-13"
 description = "When you want to try Huawei while doing something in WSL"
-canonical = "https://zxcnxc.github.io/ensp-vs-wsl-2/"
 tags = [
     "eNSP",
     "WSL",

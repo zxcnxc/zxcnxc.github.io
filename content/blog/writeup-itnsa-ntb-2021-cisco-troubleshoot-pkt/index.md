@@ -2,7 +2,6 @@
 title = "Writeup LKSN ITNSA NTB 2021 - Packet Tracer Troubleshoot"
 date = "2022-09-09"
 description = "Using Cisco Packet Tracer to troubleshoot an existing network."
-canonical = "https://zxcnxc.github.io/writeup-lksn-itnsa-ntb-2021-packet-tracer-troubleshoot/"
 tags = [
     "CISCO",
     "ITNSA",
