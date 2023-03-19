@@ -22,14 +22,6 @@
   {{ end -}}
 
   {{- partial "style.html" . -}}
-
-  {{- if isset .Params "canonical" -}}
-  <link rel="canonical" href="{{ .Params.canonical }}" />
-  {{- else -}}
-  <link rel="canonical" href="{{ .Permalink }}" />
-  {{- end }}
-
-  
   <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into
   your local /layouts/partials-directory -->
