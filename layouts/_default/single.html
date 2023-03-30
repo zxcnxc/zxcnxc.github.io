@@ -12,9 +12,4 @@
 <content>
   {{ .Content }}
 </content>
-<p style="text-align: center;">
-  {{ range (.GetTerms "tags") }}
-  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-  {{ end }}
-</p>
 {{ end }}

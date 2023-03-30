@@ -1,23 +1,21 @@
 +++
 title = "About"
-description = "Hello, I'm a random guy who enjoys IT, especially obscure technologies, cheese, and weeaboo stuff."
+description = "Hello from a random guy on the internet."
 +++
 
+![heyo](/images/aye2.png)
 
-![heyo](/images/aye.png)
-
-<div id="boxshadow">
-   <h1>Hello!</h1>
-   <p>My name is All, also known as ZXC / zxcnxc. <br>
+<div id="boxshadow" style="margin-top: -5px;">
+   <h1 style="margin-top: -0.272px; margin-bottom: 5.728px;">Hello!</h1>
+   <p style="margin-top: -14.8px;">My name is All, also known as ZXC / zxcnxc. <br>
    I work as a Fiber Optic Technician.<br>
-   This blog is a space where I share my thoughts, ideas, and experiences on a variety of topics that I'm passionate about. From Networks, Linux etc.
-   
-   PSA: Don't hate me if the first thing you see is an anime picture or weird grammar and bad formatting of the post, I'm still trying to learn to fix for those things.
 
-   You can also find me on twitter or github with same username
+   <p style="margin-top: -14.8px;">This blog is a space where I share my thoughts, ideas, and experiences on a variety of topics that I'm passionate about Sysadmin / NOC stuffs. <br>
+
+   <p style="margin-top: -14.8px;">PSA: Don't hate me if the first thing you see is an anime picture or weird grammar and bad formatting of the post, I'm still trying to learn to fix for those things.<br>
+
+   <p style="margin-top: -14.8px;">You can also find me on twitter or github with same username.
 </div>
-
-
 <!-- 
 ......                                                       ..  .             .   ..  ......         .                                 ....... .!PBG!:.. ....   ..               .......  :?G#P7 .:  ::75GBBB57:..... ......                             
 .                                                            .. :G7...         ... ^J?.  .!7Y?7^.      .                                          ..:.                                       .::.  .     ..7G5.:.                                         
