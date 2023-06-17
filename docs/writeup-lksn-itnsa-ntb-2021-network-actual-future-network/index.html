@@ -36,7 +36,7 @@
 <meta itemprop="name" content="Writeup LKSN ITNSA NTB 2021 - Network Actual &amp; Future Network">
 <meta itemprop="description" content="Using Cisco Packet Tracer, configure servers and routers on the existing network from headquarters to branches"><meta itemprop="datePublished" content="2022-03-15T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="9048"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
+<meta itemprop="wordCount" content="9052"><meta itemprop="image" content="https://zxcnxc.github.io/images/home.png"/>
 <meta itemprop="keywords" content="Cisco,Writeup,ITNSA,LKSN,Server,Router,Wireless Router,Verification Client,Packet Tracer,GRE OVER IPSEC,OSPF,DHCP,NAT,NTP,RBAC,WLC,LWAP,InterVLAN,RADIUS," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -287,7 +287,6 @@ margin: auto;
  pre ascii {
     display: block;
     padding: 0px;
-    white-space: wrap;
     overflow: hidden;
     font-size: 3px;
     margin-left: 10px;
@@ -519,7 +518,7 @@ margin: auto;
 <tbody>
 <tr>
 <td>WLC_HQ</td>
-<td>10.0.13.0.4</td>
+<td>10.0.13.4</td>
 <td>SMKHebat2021</td>
 </tr>
 <tr>
@@ -684,6 +683,7 @@ The following conditions are used to assign IP addresses to each subinterface:<b
 </span></span><span class="line"><span class="cl">HQ(dhcp-config)#network 10.0.13.0 255.255.255.0
 </span></span><span class="line"><span class="cl">HQ(dhcp-config)#default-router 10.0.13.1
 </span></span><span class="line"><span class="cl">HQ(dhcp-config)#dns-server 192.0.2.1
+</span></span><span class="line"><span class="cl">HQ(dhcp-config)#option 43 ip 10.0.13.4
 </span></span></code></pre></div><p>For each pool, specify the IP address that is not leased to the DHCP Client:</p>
 <ul>
 <li>The initial IP address of the VLAN 11 HRD and VLAN 12 MARKETING subnet addresses.</li>

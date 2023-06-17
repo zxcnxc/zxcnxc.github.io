@@ -83,7 +83,7 @@ For those interested, the questions can be downloaded via this [ITNSA](https://d
 
     Client Name  | Client IP                            | Key
     --------     | ------                               | -----
-    WLC_HQ       | 10.0.13.0.4                          | SMKHebat2021
+    WLC_HQ       | 10.0.13.4                          | SMKHebat2021
     HQ           | 10.0.14.1                            | NTBJawara2021 
 
     <br>
@@ -208,6 +208,7 @@ HQ(config)#ip dhcp pool NATIVE
 HQ(dhcp-config)#network 10.0.13.0 255.255.255.0
 HQ(dhcp-config)#default-router 10.0.13.1
 HQ(dhcp-config)#dns-server 192.0.2.1
+HQ(dhcp-config)#option 43 ip 10.0.13.4
 ```
 
 For each pool, specify the IP address that is not leased to the DHCP Client:
